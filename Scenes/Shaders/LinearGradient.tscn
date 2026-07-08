@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dc7dj5dnu2p86"]
+
+[ext_resource type="Shader" uid="uid://cahqti600pprl" path="res://Shaders/LinearGradient.gdshader" id="1_hn80w"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y5rhg"]
+shader = ExtResource("1_hn80w")
+shader_parameter/cor_reflexo = Color(1, 1, 1, 1)
+shader_parameter/opacidade_topo = 0.024
+shader_parameter/inicio_decaimento = 0.2
+shader_parameter/fim_decaimento = 0.6
+
+[node name="LinearGradient" type="ColorRect" unique_id=1026999923]
+material = SubResource("ShaderMaterial_y5rhg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

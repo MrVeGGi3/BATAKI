@@ -1,0 +1,37 @@
+[gd_resource type="Theme" format=3 uid="uid://dawvgpb75n8id"]
+
+[ext_resource type="FontFile" uid="uid://x8ft2gbnkd46" path="res://Assets/Fonts/Barlow/Barlow-Black.ttf" id="1_3uj03"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vlix"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_42515"]
+bg_color = Color(0.42352942, 0.8980392, 0.14509805, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+shadow_color = Color(0.42352942, 0.8980392, 0.14509805, 0.4)
+shadow_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xl6ml"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[resource]
+Button/colors/font_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(0.42352942, 0.8980392, 0.14509805, 1)
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("1_3uj03")
+Button/styles/hover = SubResource("StyleBoxFlat_5vlix")
+Button/styles/normal = SubResource("StyleBoxFlat_42515")
+Button/styles/pressed = SubResource("StyleBoxFlat_xl6ml")

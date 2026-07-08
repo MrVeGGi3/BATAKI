@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b43y0hltathfg"]
+
+[ext_resource type="Shader" uid="uid://cime6gm858dwd" path="res://Shaders/RadialGradient.gdshader" id="1_d6kut"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_rt1t7"]
+shader = ExtResource("1_d6kut")
+shader_parameter/cor_base = Color(0.424, 0.898, 0.145, 1)
+shader_parameter/opacidade_centro = 0.16
+shader_parameter/raio_maximo = 0.5
+
+[node name="RadialGradient" type="ColorRect" unique_id=100690229]
+material = SubResource("ShaderMaterial_rt1t7")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

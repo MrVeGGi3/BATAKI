@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "uT77ghAKxFpZjhwhB9189W7W6KQQdYkEaNgHom3vqvjFCdBd5nn20Mt8jJ16JgMMDB9mQ02TXuf/VY0oYVy+AA==",
+  "success": true,
+  "projectFilePath": "/home/matheusveras/bataki/BATAKI.csproj",
+  "expectedPackageFiles": [
+    "/home/matheusveras/.nuget/packages/godot.sourcegenerators/4.7.0/godot.sourcegenerators.4.7.0.nupkg.sha512",
+    "/home/matheusveras/.nuget/packages/godotsharp/4.7.0/godotsharp.4.7.0.nupkg.sha512",
+    "/home/matheusveras/.nuget/packages/godotsharpeditor/4.7.0/godotsharpeditor.4.7.0.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://4ai0vygblwo1"]
+
+[ext_resource type="PackedScene" uid="uid://dc7dj5dnu2p86" path="res://Scenes/Shaders/LinearGradient.tscn" id="1_aes2m"]
+[ext_resource type="PackedScene" uid="uid://b43y0hltathfg" path="res://Scenes/Shaders/RadialGradient.tscn" id="2_4lnre"]
+
+[node name="ShaderCombo" type="CanvasLayer" unique_id=484204530]
+layer = 0
+
+[node name="Background" type="ColorRect" parent="." unique_id=1231294111]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="LinearGradient" parent="." unique_id=1026999923 instance=ExtResource("1_aes2m")]
+
+[node name="RadialGradient" parent="." unique_id=100690229 instance=ExtResource("2_4lnre")]

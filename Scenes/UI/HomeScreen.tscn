@@ -1,0 +1,84 @@
+[gd_scene format=3 uid="uid://bafecv0k4qnv8"]
+
+[ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/LabelDescription.tres" id="1_qfqm7"]
+[ext_resource type="Theme" uid="uid://4ejgehnkbkyg" path="res://Themes/LabelName.tres" id="2_tto1b"]
+[ext_resource type="Theme" uid="uid://dawvgpb75n8id" path="res://Themes/Button.tres" id="3_tto1b"]
+[ext_resource type="Theme" uid="uid://cc3j17kgvsgf6" path="res://Themes/ButtonDescription.tres" id="4_372cc"]
+[ext_resource type="Script" uid="uid://prqfsk7d731b" path="res://Scripts/UI/button.gd" id="4_gef8g"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_372cc"]
+load_path = "res://.godot/imported/Rectangle.svg-f399311a604fb19fb9993b710404cd18.ctex"
+
+[node name="HomeScreen" type="CanvasLayer" unique_id=333967683]
+layer = 2
+
+[node name="MainScreenUI" type="Control" parent="." unique_id=425036128]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreenUI" unique_id=22161091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -443.0
+offset_top = -286.0
+offset_right = 437.0
+offset_bottom = 72.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="DescriptionLabel" type="Label" parent="MainScreenUI/VBoxContainer" unique_id=1461872280]
+layout_mode = 2
+theme = ExtResource("1_qfqm7")
+text = "Arcade · Reaction Game"
+horizontal_alignment = 1
+
+[node name="NameLabel" type="Label" parent="MainScreenUI/VBoxContainer" unique_id=1812659906]
+layout_mode = 2
+theme = ExtResource("2_tto1b")
+text = "BATAKI"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainScreenUI/VBoxContainer" unique_id=441612023]
+layout_mode = 2
+bbcode_enabled = true
+text = "Acenda. Toque. Repita.
+
+Teste seu reflexo em [color=#93FC56]30 segundos[/color].
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RectangleTexture" type="TextureRect" parent="MainScreenUI" unique_id=600532845]
+layout_mode = 0
+offset_left = 750.0
+offset_top = 588.0
+offset_right = 1170.0
+offset_bottom = 597.0
+texture = SubResource("CompressedTexture2D_372cc")
+
+[node name="StartGameButton" type="Button" parent="MainScreenUI" unique_id=1395890340]
+layout_mode = 0
+offset_left = 651.0
+offset_top = 649.0
+offset_right = 1271.0
+offset_bottom = 830.0
+theme = ExtResource("3_tto1b")
+text = "JOGAR"
+script = ExtResource("4_gef8g")
+
+[node name="ButtonDescriptionLabel" type="Label" parent="MainScreenUI" unique_id=1421243375]
+layout_mode = 0
+offset_left = 857.0
+offset_top = 851.0
+offset_right = 1073.0
+offset_bottom = 883.0
+theme = ExtResource("4_372cc")
+text = "Toque para Começar"
