@@ -1,0 +1,16 @@
+[gd_resource type="Theme" format=3 uid="uid://dfdlwpesril2e"]
+
+[ext_resource type="FontFile" uid="uid://x8ft2gbnkd46" path="res://Assets/Fonts/Barlow/Barlow-Black.ttf" id="1_bfjjp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxtf7"]
+bg_color = Color(0.5764706, 0.9882353, 0.3372549, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[resource]
+Label/colors/font_color = Color(0.039215688, 0.039215688, 0.039215688, 1)
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_bfjjp")
+Label/styles/normal = SubResource("StyleBoxFlat_nxtf7")

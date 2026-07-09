@@ -1,22 +1,301 @@
 [gd_scene format=3 uid="uid://bafecv0k4qnv8"]
 
-[ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/LabelDescription.tres" id="1_qfqm7"]
-[ext_resource type="Theme" uid="uid://4ejgehnkbkyg" path="res://Themes/LabelName.tres" id="2_tto1b"]
-[ext_resource type="Theme" uid="uid://dawvgpb75n8id" path="res://Themes/Button.tres" id="3_tto1b"]
-[ext_resource type="Theme" uid="uid://cc3j17kgvsgf6" path="res://Themes/ButtonDescription.tres" id="4_372cc"]
-[ext_resource type="Script" uid="uid://prqfsk7d731b" path="res://Scripts/UI/button.gd" id="4_gef8g"]
+[ext_resource type="Script" uid="uid://b6vd3gv7witv" path="res://Scripts/Scenes/ui_updater.gd" id="1_5vlix"]
+[ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/Labels/DescriptionLable.tres" id="1_qfqm7"]
+[ext_resource type="Theme" uid="uid://4ejgehnkbkyg" path="res://Themes/Labels/NameLable.tres" id="2_tto1b"]
+[ext_resource type="Theme" uid="uid://c8u5ia81awxj5" path="res://Themes/RichTextLabel/RichTextLabelDescription.tres" id="3_5vlix"]
+[ext_resource type="Theme" uid="uid://dawvgpb75n8id" path="res://Themes/Buttons/Button.tres" id="3_tto1b"]
+[ext_resource type="Theme" uid="uid://cc3j17kgvsgf6" path="res://Themes/Buttons/ButtonDescription.tres" id="4_372cc"]
+[ext_resource type="Theme" uid="uid://f86a300kpfiy" path="res://Themes/Labels/InputLable.tres" id="7_3q4aq"]
+[ext_resource type="Script" uid="uid://dc45xdogd84td" path="res://Scripts/UI/forms_ui.gd" id="7_g3rn2"]
+[ext_resource type="Theme" uid="uid://dywslcynw6a0s" path="res://Themes/LineEdit/LineEditBase.tres" id="8_8wsfi"]
+[ext_resource type="FontFile" uid="uid://denphaglaaa5q" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-Bold.ttf" id="9_cme1u"]
+[ext_resource type="Theme" uid="uid://bd0lsmggg16xk" path="res://Themes/Panel/RulePanels.tres" id="10_iehq5"]
+[ext_resource type="Theme" uid="uid://bsvxaslxf4ubm" path="res://Themes/Labels/Rules/RuleDescriptionLable.tres" id="11_qg1uo"]
+[ext_resource type="FontFile" uid="uid://bht0t184nw0ni" path="res://Assets/Fonts/Barlow/BarlowSemiCondensed-Medium.ttf" id="12_g3rn2"]
+[ext_resource type="Script" uid="uid://dmph8yl8lp0yn" path="res://Scripts/Forms/forms_verifier.gd" id="13_qg1uo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_372cc"]
 load_path = "res://.godot/imported/Rectangle.svg-f399311a604fb19fb9993b710404cd18.ctex"
 
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_iehq5"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qg1uo"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3rn2"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4h3t3"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mcjlx"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lay20"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecq0a"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo4ak"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lay20"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_64kww"]
+bg_color = Color(0.42352942, 0.80784315, 0.32156864, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="Theme" id="Theme_ecq0a"]
+Panel/styles/panel = SubResource("StyleBoxFlat_64kww")
+
+[sub_resource type="Theme" id="Theme_qo4ak"]
+Label/colors/font_color = Color(0.9137255, 1, 0.84313726, 1)
+Label/font_sizes/font_size = 38
+Label/fonts/font = ExtResource("12_g3rn2")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8hfop"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7u7q5"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_r6oc4"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="Animation" id="Animation_g3rn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RulesUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormScreenUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainScreenUI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainScreenUI:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8wsfi"]
+resource_name = "form_screen_selected"
+length = 0.46666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainScreenUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormScreenUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FormScreenUI:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(940, 599), Vector2(940, 520)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RulesUI:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4h3t3"]
+resource_name = "main_screen_selected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainScreenUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainScreenUI:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-11, 116), Vector2(-18, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FormScreenUI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RulesUI:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qg1uo"]
+resource_name = "rules_screen_selected"
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainScreenUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormScreenUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RulesUI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RulesUI:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(3, 110), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cme1u"]
+_data = {
+&"RESET": SubResource("Animation_g3rn2"),
+&"form_screen_selected": SubResource("Animation_8wsfi"),
+&"main_screen_selected": SubResource("Animation_4h3t3"),
+&"rules_screen_selected": SubResource("Animation_qg1uo")
+}
+
 [node name="HomeScreen" type="CanvasLayer" unique_id=333967683]
 layer = 2
+script = ExtResource("1_5vlix")
 
 [node name="MainScreenUI" type="Control" parent="." unique_id=425036128]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -18.0
+offset_right = -18.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -27,17 +306,17 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -443.0
-offset_top = -286.0
-offset_right = 437.0
-offset_bottom = 72.0
+offset_left = -484.0
+offset_top = -358.0
+offset_right = 516.0
+offset_bottom = 128.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="DescriptionLabel" type="Label" parent="MainScreenUI/VBoxContainer" unique_id=1461872280]
 layout_mode = 2
 theme = ExtResource("1_qfqm7")
-text = "Arcade · Reaction Game"
+text = "ARCADE · REACTION GAME"
 horizontal_alignment = 1
 
 [node name="NameLabel" type="Label" parent="MainScreenUI/VBoxContainer" unique_id=1812659906]
@@ -48,37 +327,409 @@ horizontal_alignment = 1
 
 [node name="RichTextLabel" type="RichTextLabel" parent="MainScreenUI/VBoxContainer" unique_id=441612023]
 layout_mode = 2
+theme = ExtResource("3_5vlix")
 bbcode_enabled = true
 text = "Acenda. Toque. Repita.
-
-Teste seu reflexo em [color=#93FC56]30 segundos[/color].
+Teste seu reflexo em [b][color=#93FC56]30 segundos[/color][/b].
 "
+fit_content = true
+scroll_active = false
 horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RectangleTexture" type="TextureRect" parent="MainScreenUI" unique_id=600532845]
 layout_mode = 0
-offset_left = 750.0
-offset_top = 588.0
-offset_right = 1170.0
-offset_bottom = 597.0
+offset_left = 753.0
+offset_top = 514.0
+offset_right = 1173.0
+offset_bottom = 523.0
 texture = SubResource("CompressedTexture2D_372cc")
 
 [node name="StartGameButton" type="Button" parent="MainScreenUI" unique_id=1395890340]
 layout_mode = 0
-offset_left = 651.0
-offset_top = 649.0
-offset_right = 1271.0
-offset_bottom = 830.0
+offset_left = 666.0
+offset_top = 693.0
+offset_right = 1286.0
+offset_bottom = 874.0
 theme = ExtResource("3_tto1b")
 text = "JOGAR"
-script = ExtResource("4_gef8g")
 
 [node name="ButtonDescriptionLabel" type="Label" parent="MainScreenUI" unique_id=1421243375]
 layout_mode = 0
 offset_left = 857.0
-offset_top = 851.0
-offset_right = 1073.0
-offset_bottom = 883.0
+offset_top = 922.0
+offset_right = 1094.0
+offset_bottom = 954.0
 theme = ExtResource("4_372cc")
-text = "Toque para Começar"
+text = "TOQUE PARA COMEÇAR"
+
+[node name="FormScreenUI" type="Control" parent="." unique_id=2100398800]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_g3rn2")
+
+[node name="MainContainer" type="VBoxContainer" parent="FormScreenUI" unique_id=547853907]
+layout_mode = 0
+offset_left = -436.0
+offset_top = -406.0
+offset_right = 454.0
+offset_bottom = 554.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=762389089]
+layout_mode = 2
+
+[node name="DescriptionLabel" type="Label" parent="FormScreenUI/MainContainer/VBoxContainer" unique_id=2044533109]
+layout_mode = 2
+theme = ExtResource("1_qfqm7")
+text = "PASSO 1 DE 2"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WhoPlaysLabel" type="Label" parent="FormScreenUI/MainContainer/VBoxContainer" unique_id=640538441]
+layout_mode = 2
+theme = ExtResource("2_tto1b")
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 92
+text = "Quem vai jogar?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=955514687]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_iehq5")
+
+[node name="FillNameContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=1200179413]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NameFormContainer" type="HBoxContainer" parent="FormScreenUI/MainContainer/FillNameContainer" unique_id=1698497118]
+layout_mode = 2
+
+[node name="PlayerNameLabel" type="Label" parent="FormScreenUI/MainContainer/FillNameContainer/NameFormContainer" unique_id=2116203477]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+text = "NOME"
+
+[node name="AsterickLabel" type="Label" parent="FormScreenUI/MainContainer/FillNameContainer/NameFormContainer" unique_id=795749592]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+theme_override_colors/font_color = Color(0.42352942, 0.8980392, 0.14509805, 1)
+text = "*"
+
+[node name="UserNameLineEdit" type="LineEdit" parent="FormScreenUI/MainContainer/FillNameContainer" unique_id=1430670127]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_8wsfi")
+
+[node name="HSeparator2" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=1834488465]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_qg1uo")
+
+[node name="FillEmailContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=1526182979]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EmailFormContainer" type="HBoxContainer" parent="FormScreenUI/MainContainer/FillEmailContainer" unique_id=2114574959]
+layout_mode = 2
+
+[node name="EmailLabel" type="Label" parent="FormScreenUI/MainContainer/FillEmailContainer/EmailFormContainer" unique_id=805237841]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+text = "E-MAIL"
+
+[node name="OptionalLabel" type="Label" parent="FormScreenUI/MainContainer/FillEmailContainer/EmailFormContainer" unique_id=1291118147]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+theme_override_colors/font_color = Color(0.7529412, 0.7607843, 0.78431374, 1)
+theme_override_constants/line_spacing = 3
+text = "(OPCIONAL)"
+
+[node name="UserEmailLineEdit" type="LineEdit" parent="FormScreenUI/MainContainer/FillEmailContainer" unique_id=1920628876]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_8wsfi")
+
+[node name="HSeparator3" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=1757243415]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_g3rn2")
+
+[node name="FillEnterpriseContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=1374528763]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnterpriseFormContainer" type="HBoxContainer" parent="FormScreenUI/MainContainer/FillEnterpriseContainer" unique_id=862801723]
+layout_mode = 2
+
+[node name="EnterpriseLabel" type="Label" parent="FormScreenUI/MainContainer/FillEnterpriseContainer/EnterpriseFormContainer" unique_id=226651127]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+text = "EMPRESA"
+
+[node name="OptionalLabel" type="Label" parent="FormScreenUI/MainContainer/FillEnterpriseContainer/EnterpriseFormContainer" unique_id=2113724310]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+theme_override_colors/font_color = Color(0.7529412, 0.7607843, 0.78431374, 1)
+theme_override_constants/line_spacing = 3
+text = "(OPCIONAL)"
+
+[node name="UserEnterpriseLineEdit" type="LineEdit" parent="FormScreenUI/MainContainer/FillEnterpriseContainer" unique_id=1378335936]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_8wsfi")
+
+[node name="HSeparator4" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=909800345]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_4h3t3")
+
+[node name="PlayGameButton" type="Button" parent="FormScreenUI/MainContainer" unique_id=52224082]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_tto1b")
+theme_override_font_sizes/font_size = 56
+text = "CONTINUAR"
+icon_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=694493125]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_mcjlx")
+
+[node name="BackHomeButton" type="Button" parent="FormScreenUI/MainContainer" unique_id=2065016309]
+layout_mode = 2
+theme = ExtResource("4_372cc")
+theme_override_colors/font_color = Color(0.52156866, 0.52156866, 0.52156866, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("9_cme1u")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_lay20")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ecq0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qo4ak")
+text = "VOLTAR AO INICIO"
+
+[node name="RulesUI" type="Control" parent="." unique_id=972092332]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = 3.0
+offset_top = 110.0
+offset_right = 43.0
+offset_bottom = 149.99997
+
+[node name="HowToPlayLable" type="Label" parent="RulesUI" unique_id=1791065198]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 129.0
+offset_right = 1448.0
+offset_bottom = 161.0
+size_flags_vertical = 6
+theme = ExtResource("1_qfqm7")
+theme_override_constants/line_spacing = 11
+text = "COMO JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RulesContainer" type="VBoxContainer" parent="RulesUI" unique_id=252480106]
+layout_mode = 0
+offset_left = 589.0
+offset_top = 132.0
+offset_right = 1489.0
+offset_bottom = 1082.0
+scale = Vector2(0.9, 0.9)
+
+[node name="RulesTitleLable" type="Label" parent="RulesUI/RulesContainer" unique_id=41721097]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_tto1b")
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 92
+text = "As Regras"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=2118845226]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_lay20")
+
+[node name="Rule1" type="Control" parent="RulesUI/RulesContainer" unique_id=1479773737]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rule1Panel" type="Panel" parent="RulesUI/RulesContainer/Rule1" unique_id=762794341]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 178.0
+theme = ExtResource("10_iehq5")
+
+[node name="CirclePanel" type="Panel" parent="RulesUI/RulesContainer/Rule1" unique_id=1357088401]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 136.0
+theme = SubResource("Theme_ecq0a")
+
+[node name="NumberLable" type="Label" parent="RulesUI/RulesContainer/Rule1" unique_id=1479331475]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 61.0
+offset_right = 129.0
+offset_bottom = 117.0
+theme = ExtResource("11_qg1uo")
+text = "1"
+
+[node name="DescriptionRuleLable" type="Label" parent="RulesUI/RulesContainer/Rule1" unique_id=798256726]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 45.0
+offset_right = 725.0
+offset_bottom = 140.0
+theme = SubResource("Theme_qo4ak")
+text = "Toque no botão que ACENDER o mais
+ rápido possível."
+vertical_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=859034296]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
+
+[node name="Rule2" type="Control" parent="RulesUI/RulesContainer" unique_id=1838267264]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rule2Panel" type="Panel" parent="RulesUI/RulesContainer/Rule2" unique_id=1482383147]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 178.0
+theme = ExtResource("10_iehq5")
+
+[node name="CirclePanel" type="Panel" parent="RulesUI/RulesContainer/Rule2" unique_id=2123351489]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 136.0
+theme = SubResource("Theme_ecq0a")
+
+[node name="NumberLable" type="Label" parent="RulesUI/RulesContainer/Rule2" unique_id=632893413]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 61.000015
+offset_right = 129.0
+offset_bottom = 176.00002
+theme = ExtResource("11_qg1uo")
+text = "2
+"
+
+[node name="DescriptionRuleLable" type="Label" parent="RulesUI/RulesContainer/Rule2" unique_id=908731037]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 45.0
+offset_right = 885.0
+offset_bottom = 140.0
+theme = SubResource("Theme_qo4ak")
+text = "Cada Acerto vale pontos. Sequências
+ rápidas dão multiplicador."
+vertical_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=891074979]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7u7q5")
+
+[node name="Rule3" type="Control" parent="RulesUI/RulesContainer" unique_id=742546512]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rule3Panel" type="Panel" parent="RulesUI/RulesContainer/Rule3" unique_id=299648288]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 178.0
+theme = ExtResource("10_iehq5")
+
+[node name="CirclePanel" type="Panel" parent="RulesUI/RulesContainer/Rule3" unique_id=582638770]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 136.0
+theme = SubResource("Theme_ecq0a")
+
+[node name="NumberLable" type="Label" parent="RulesUI/RulesContainer/Rule3" unique_id=1833156221]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 61.0
+offset_right = 129.0
+offset_bottom = 117.0
+theme = ExtResource("11_qg1uo")
+text = "3
+
+"
+
+[node name="DescriptionRuleLable" type="Label" parent="RulesUI/RulesContainer/Rule3" unique_id=237460619]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 42.0
+offset_right = 885.0
+offset_bottom = 137.0
+theme = SubResource("Theme_qo4ak")
+text = "Você tem 30 Segundos. Boa Sorte!"
+vertical_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1271235865]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_r6oc4")
+
+[node name="StartGameButton" type="Button" parent="RulesUI/RulesContainer" unique_id=2002835596]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_tto1b")
+text = "COMEÇAR"
+
+[node name="BackHomeButton" type="Button" parent="RulesUI" unique_id=1072544962]
+layout_mode = 0
+offset_left = 896.0
+offset_top = 1012.0
+offset_right = 1078.0
+offset_bottom = 1044.0
+theme = ExtResource("4_372cc")
+theme_override_colors/font_color = Color(0.52156866, 0.52156866, 0.52156866, 1)
+theme_override_constants/line_spacing = 3
+theme_override_fonts/font = ExtResource("9_cme1u")
+theme_override_font_sizes/font_size = 26
+theme_override_styles/normal = SubResource("StyleBoxFlat_lay20")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ecq0a")
+theme_override_styles/hover = SubResource("StyleBoxFlat_qo4ak")
+text = "VOLTAR AO INICIO"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=41413511]
+libraries/ = SubResource("AnimationLibrary_cme1u")
+autoplay = &"main_screen_selected"
+
+[node name="FormsVerifier" type="Node" parent="." unique_id=306531227]
+script = ExtResource("13_qg1uo")
+
+[connection signal="pressed" from="MainScreenUI/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="text_changed" from="FormScreenUI/MainContainer/FillNameContainer/UserNameLineEdit" to="." method="_on_user_name_line_edit_text_changed"]
+[connection signal="text_changed" from="FormScreenUI/MainContainer/FillEmailContainer/UserEmailLineEdit" to="." method="_on_user_email_line_edit_text_changed"]
+[connection signal="text_changed" from="FormScreenUI/MainContainer/FillEnterpriseContainer/UserEnterpriseLineEdit" to="." method="_on_user_enterprise_line_edit_text_changed"]
+[connection signal="pressed" from="FormScreenUI/MainContainer/PlayGameButton" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="FormScreenUI/MainContainer/BackHomeButton" to="." method="_on_back_home_button_pressed"]
+[connection signal="pressed" from="RulesUI/RulesContainer/StartGameButton" to="." method="_on_rules_start_game_button_pressed"]
+[connection signal="pressed" from="RulesUI/BackHomeButton" to="." method="_on_back_home_button_pressed"]

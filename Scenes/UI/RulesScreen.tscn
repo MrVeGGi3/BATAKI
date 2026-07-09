@@ -1,0 +1,215 @@
+[gd_scene format=3 uid="uid://bi5jb22ttn7l0"]
+
+[ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/Labels/DescriptionLable.tres" id="1_xwqk3"]
+[ext_resource type="Theme" uid="uid://4ejgehnkbkyg" path="res://Themes/Labels/NameLable.tres" id="2_sxk17"]
+[ext_resource type="Theme" uid="uid://bd0lsmggg16xk" path="res://Themes/Panel/RulePanels.tres" id="3_sxk17"]
+[ext_resource type="Theme" uid="uid://bsvxaslxf4ubm" path="res://Themes/Labels/Rules/RuleDescriptionLable.tres" id="4_hitwi"]
+[ext_resource type="FontFile" uid="uid://bht0t184nw0ni" path="res://Assets/Fonts/Barlow/BarlowSemiCondensed-Medium.ttf" id="5_hitwi"]
+[ext_resource type="Theme" uid="uid://dawvgpb75n8id" path="res://Themes/Buttons/Button.tres" id="7_khs5a"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_3pk8b"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3pk8b"]
+bg_color = Color(0.42352942, 0.80784315, 0.32156864, 1)
+corner_radius_top_left = 999
+corner_radius_top_right = 999
+corner_radius_bottom_right = 999
+corner_radius_bottom_left = 999
+
+[sub_resource type="Theme" id="Theme_1vijk"]
+Panel/styles/panel = SubResource("StyleBoxFlat_3pk8b")
+
+[sub_resource type="Theme" id="Theme_rksup"]
+Label/colors/font_color = Color(0.9137255, 1, 0.84313726, 1)
+Label/font_sizes/font_size = 38
+Label/fonts/font = ExtResource("5_hitwi")
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lw0ak"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_c44bb"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_khs5a"]
+color = Color(0, 0, 0, 0)
+
+[node name="RulesScreen" type="CanvasLayer" unique_id=582983944]
+layer = 2
+
+[node name="RulesUI" type="Control" parent="." unique_id=185414771]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HowToPlayLable" type="Label" parent="RulesUI" unique_id=742255050]
+layout_mode = 0
+offset_left = 548.0
+offset_top = 119.0
+offset_right = 1448.0
+offset_bottom = 151.0
+size_flags_vertical = 6
+theme = ExtResource("1_xwqk3")
+theme_override_constants/line_spacing = 11
+text = "COMO JOGAR"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RulesContainer" type="VBoxContainer" parent="RulesUI" unique_id=1576742747]
+layout_mode = 0
+offset_left = 554.0
+offset_top = 123.0
+offset_right = 1454.0
+offset_bottom = 1073.0
+
+[node name="RulesTitleLable" type="Label" parent="RulesUI/RulesContainer" unique_id=1242380617]
+layout_mode = 2
+size_flags_vertical = 6
+theme = ExtResource("2_sxk17")
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 92
+text = "As Regras"
+horizontal_alignment = 1
+
+[node name="HSeparator2" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1217868091]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_3pk8b")
+
+[node name="Rule1" type="Control" parent="RulesUI/RulesContainer" unique_id=1681920848]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rule1Panel" type="Panel" parent="RulesUI/RulesContainer/Rule1" unique_id=1848975273]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 178.0
+theme = ExtResource("3_sxk17")
+
+[node name="CirclePanel" type="Panel" parent="RulesUI/RulesContainer/Rule1" unique_id=1929062974]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 136.0
+theme = SubResource("Theme_1vijk")
+
+[node name="NumberLable" type="Label" parent="RulesUI/RulesContainer/Rule1" unique_id=1536213136]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 61.0
+offset_right = 129.0
+offset_bottom = 117.0
+theme = ExtResource("4_hitwi")
+text = "1"
+
+[node name="DescriptionRuleLable" type="Label" parent="RulesUI/RulesContainer/Rule1" unique_id=1058458694]
+layout_mode = 0
+offset_left = 179.0
+offset_top = 45.0
+offset_right = 725.0
+offset_bottom = 140.0
+theme = SubResource("Theme_rksup")
+text = "Toque no botão que ACENDER o mais
+ rápido possível."
+vertical_alignment = 1
+
+[node name="HSeparator3" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1379426316]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_lw0ak")
+
+[node name="Rule2" type="Control" parent="RulesUI/RulesContainer" unique_id=1678512948]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rule2Panel" type="Panel" parent="RulesUI/RulesContainer/Rule2" unique_id=1503433903]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 178.0
+theme = ExtResource("3_sxk17")
+
+[node name="CirclePanel" type="Panel" parent="RulesUI/RulesContainer/Rule2" unique_id=850975606]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 136.0
+theme = SubResource("Theme_1vijk")
+
+[node name="NumberLable" type="Label" parent="RulesUI/RulesContainer/Rule2" unique_id=785422075]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 61.000015
+offset_right = 129.0
+offset_bottom = 176.00002
+theme = ExtResource("4_hitwi")
+text = "2
+"
+
+[node name="DescriptionRuleLable" type="Label" parent="RulesUI/RulesContainer/Rule2" unique_id=213188902]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 45.0
+offset_right = 885.0
+offset_bottom = 140.0
+theme = SubResource("Theme_rksup")
+text = "Cada Acerto vale pontos. Sequências
+ rápidas dão multiplicador."
+vertical_alignment = 1
+
+[node name="HSeparator4" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1956315804]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_c44bb")
+
+[node name="Rule3" type="Control" parent="RulesUI/RulesContainer" unique_id=884920911]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Rule3Panel" type="Panel" parent="RulesUI/RulesContainer/Rule3" unique_id=2142195758]
+layout_mode = 0
+offset_right = 880.0
+offset_bottom = 178.0
+theme = ExtResource("3_sxk17")
+
+[node name="CirclePanel" type="Panel" parent="RulesUI/RulesContainer/Rule3" unique_id=45209551]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 40.0
+offset_right = 149.0
+offset_bottom = 136.0
+theme = SubResource("Theme_1vijk")
+
+[node name="NumberLable" type="Label" parent="RulesUI/RulesContainer/Rule3" unique_id=679998404]
+layout_mode = 0
+offset_left = 89.0
+offset_top = 61.0
+offset_right = 129.0
+offset_bottom = 117.0
+theme = ExtResource("4_hitwi")
+text = "3
+
+"
+
+[node name="DescriptionRuleLable" type="Label" parent="RulesUI/RulesContainer/Rule3" unique_id=732336029]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 42.0
+offset_right = 885.0
+offset_bottom = 137.0
+theme = SubResource("Theme_rksup")
+text = "Você tem 30 Segundos. Boa Sorte!"
+vertical_alignment = 1
+
+[node name="HSeparator5" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=322682975]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_khs5a")
+
+[node name="StartGameButton" type="Button" parent="RulesUI/RulesContainer" unique_id=1624776418]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("7_khs5a")
+text = "COMEÇAR"

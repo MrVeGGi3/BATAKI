@@ -1,0 +1,8 @@
+[gd_resource type="Theme" format=3 uid="uid://f86a300kpfiy"]
+
+[ext_resource type="FontFile" uid="uid://b2gucl7clv0n6" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-ExtraBold.ttf" id="1_gqn2r"]
+
+[resource]
+Label/constants/line_spacing = 3
+Label/font_sizes/font_size = 24
+Label/fonts/font = ExtResource("1_gqn2r")

@@ -1,0 +1,213 @@
+[gd_scene format=3 uid="uid://dob4wy2p7qh2y"]
+
+[ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/Labels/DescriptionLable.tres" id="1_qsy8q"]
+[ext_resource type="Script" uid="uid://ddp0c3qn5pxsq" path="res://Scripts/Mechanics/cd_animation.gd" id="1_yba0c"]
+[ext_resource type="FontFile" uid="uid://x8ft2gbnkd46" path="res://Assets/Fonts/Barlow/Barlow-Black.ttf" id="2_blm7k"]
+[ext_resource type="Shader" uid="uid://cime6gm858dwd" path="res://Shaders/RadialGradient.gdshader" id="3_yba0c"]
+
+[sub_resource type="Animation" id="Animation_blm7k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Countdown/CountLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Countdown:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Countdown:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Countdown:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Countdown:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(815, 251)]
+}
+
+[sub_resource type="Animation" id="Animation_yba0c"]
+resource_name = "start_countdown"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Countdown/CountLabel:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.01, 1.01, 1.99, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": ["3", "2
+", "1
+", "JÁ"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Countdown:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.93333334, 1.1, 1.9333333, 2.1, 3, 3.2, 3.9666667),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(1, 1), Vector2(0, 0), Vector2(1, 1), Vector2(0, 0), Vector2(1, 1), Vector2(0, 0), Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Countdown:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1.01, 1.98, 3, 3.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(815, 251), Vector2(815, 251), Vector2(815, 251), Vector2(815, 251), Vector2(654, 206.99998)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Countdown:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 1.1666666, 1.9666667, 2.1, 3, 3.1666667, 3.9),
+"transitions": PackedFloat32Array(1, 0.5547846, 1, 0.5547846, 1, 0.5547846, 1, 0.5547846),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Countdown:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.8333333, 1.2, 1.9333333, 2.2333333, 2.9, 3.3),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [true, false, true, false, true, false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_45o3d"]
+_data = {
+&"RESET": SubResource("Animation_blm7k"),
+&"start_countdown": SubResource("Animation_yba0c")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_unpns"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0rqbs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxtf7"]
+shader = ExtResource("3_yba0c")
+shader_parameter/cor_base = Color(0.424, 0.898, 0.145, 1)
+shader_parameter/opacidade_centro = 0.150000007125
+shader_parameter/raio_maximo = 0.6070000288325
+
+[node name="CdAnimation" type="Control" unique_id=1247823060]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yba0c")
+
+[node name="GetReadyLabel" type="Label" parent="." unique_id=1109238583]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = -301.0
+offset_right = 67.0
+offset_bottom = -269.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_qsy8q")
+text = "PREPARE-SE"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=764794322]
+libraries/ = SubResource("AnimationLibrary_45o3d")
+autoplay = &"start_countdown"
+
+[node name="Countdown" type="Control" parent="." unique_id=1325756779]
+anchors_preset = 0
+offset_left = 815.0
+offset_top = 251.0
+offset_right = 855.0
+offset_bottom = 290.9989
+
+[node name="CountLabel" type="Label" parent="Countdown" unique_id=1810748357]
+material = SubResource("ShaderMaterial_unpns")
+layout_mode = 0
+offset_left = -7.0
+offset_top = -5.0
+offset_right = 282.0
+offset_bottom = 619.0
+theme_override_colors/font_color = Color(0.5764706, 0.9882353, 0.3372549, 1)
+theme_override_colors/font_shadow_color = Color(0.42352942, 0.8980392, 0.14509805, 1)
+theme_override_constants/shadow_offset_x = 4
+theme_override_constants/shadow_offset_y = 4
+theme_override_fonts/font = ExtResource("2_blm7k")
+theme_override_font_sizes/font_size = 520
+theme_override_styles/focus = SubResource("StyleBoxEmpty_0rqbs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="Countdown/CountLabel" unique_id=1514817227]
+material = SubResource("ShaderMaterial_nxtf7")
+layout_mode = 0
+offset_left = 9.000001
+offset_top = 120.000015
+offset_right = 49.0
+offset_bottom = 160.00002
+scale = Vector2(7.096774, 10.21875)

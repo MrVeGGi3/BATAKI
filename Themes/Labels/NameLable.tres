@@ -1,0 +1,13 @@
+[gd_resource type="Theme" format=3 uid="uid://4ejgehnkbkyg"]
+
+[ext_resource type="FontFile" uid="uid://x8ft2gbnkd46" path="res://Assets/Fonts/Barlow/Barlow-Black.ttf" id="1_mxciw"]
+
+[resource]
+Label/colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+Label/colors/font_shadow_color = Color(0.42352942, 0.8980392, 0.14509805, 0.5019608)
+Label/constants/line_spacing = -8
+Label/constants/shadow_offset_x = 5
+Label/constants/shadow_offset_y = 5
+Label/constants/shadow_outline_size = 1
+Label/font_sizes/font_size = 265
+Label/fonts/font = ExtResource("1_mxciw")
