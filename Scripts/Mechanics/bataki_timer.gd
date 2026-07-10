@@ -1,3 +1,4 @@
+class_name BatakiTimer
 extends Node
 
 @onready var score_counter_manager: ScoreCounterManager = $"../ScoreCounterManager"
@@ -19,6 +20,7 @@ func game_timeout():
 	can_run = false
 	score_counter_manager.update_player_stats()
 	
-	
+func start_counter():
+	can_run = true
 		
 		

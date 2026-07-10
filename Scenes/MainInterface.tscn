@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://casdixt0j0y21"]
 
-[ext_resource type="PackedScene" uid="uid://4ai0vygblwo1" path="res://Scenes/Shaders/ShadersScreen.tscn" id="1_vv68e"]
+[ext_resource type="PackedScene" uid="uid://4ai0vygblwo1" path="res://Scenes/Shaders/ShadersComboScreen.tscn" id="1_vv68e"]
 [ext_resource type="PackedScene" uid="uid://cjgpi2ot6g1m5" path="res://Scenes/UI/LogoScreen.tscn" id="2_r7104"]
 [ext_resource type="PackedScene" uid="uid://bafecv0k4qnv8" path="res://Scenes/UI/HomeScreen.tscn" id="3_3cd2t"]
 

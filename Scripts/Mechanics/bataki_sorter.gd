@@ -2,12 +2,14 @@ class_name BatakiSorter
 extends Node
 
 @export var bataki_buttons : Array[Button]
+@export var buttons_texture : Array[TextureButton]
 @export var score_counter_manager : ScoreCounterManager
 @onready var button_effect_manager: ButtonEffectManager = $"../ButtonEffectManager"
 
 
 var actual_sort_bataki : BatakiButton = null
-# Called when the node enters the scene tree for the first time.
+
+
 func _ready() -> void:
 	assign_signal_activation()
 
@@ -24,5 +26,7 @@ func sort_new_bataki():
 	var chosen_bataki : BatakiButton = valid_buttons.pick_random()
 	chosen_bataki.is_chosen_bataki = true
 	actual_sort_bataki = chosen_bataki
-	button_effect_manager.turn_on_bataki(actual_sort_bataki)
+	var index = bataki_buttons.find(actual_sort_bataki)
+	var actual_texture = buttons_texture[index]
+	button_effect_manager.turn_on_bataki(actual_texture)
 	
