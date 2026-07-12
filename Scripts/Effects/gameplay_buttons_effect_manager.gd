@@ -10,19 +10,20 @@ const TEXTURAS = {
 	Estado.CORRECT: preload("uid://cuqjua1rxql68")
 }
 
-func _mudar_estado_botao(botao: TextureRect, estado: Estado):
+func _mudar_estado_botao(botao: TextureButton, estado: Estado):
 	if TEXTURAS.has(estado):
-		botao.texture = TEXTURAS[estado]
+		botao.texture_normal = TEXTURAS[estado]
 
 
-func turn_on_bataki(texture_r : TextureRect):
+func turn_on_bataki(texture_r : TextureButton):
+	print("Estou alterando a textura do Bataki para o estado de sinalização")
 	_mudar_estado_botao(texture_r, Estado.TURN_ON)
 	
-func turn_off_bataki(texture_r : TextureRect):
+func turn_off_bataki(texture_r :TextureButton):
 	_mudar_estado_botao(texture_r, Estado.NORMAL)
 
 
-func correct_effect(texture_r : TextureRect):
+func correct_effect(texture_r : TextureButton):
 	_mudar_estado_botao(texture_r, Estado.CORRECT)
 	
 	texture_r.pivot_offset = texture_r.size / 2
@@ -34,11 +35,10 @@ func correct_effect(texture_r : TextureRect):
 	tween.tween_callback(func(): _mudar_estado_botao(texture_r, Estado.NORMAL))
 
 
-func error_effect(texture_r : TextureRect):
+func error_effect(texture_r : TextureButton):
 	_mudar_estado_botao(texture_r, Estado.ERROR)
 	
 	var tween = create_tween().set_parallel(false)
-
 	tween.tween_property(texture_r, "modulate", Color(1, 0.4, 0.4, 1), 0.1)
 	tween.tween_property(texture_r, "modulate", Color(1, 1, 1, 1), 0.1)
 	tween.tween_property(texture_r, "modulate", Color(1, 0.4, 0.4, 1), 0.1)

@@ -6,7 +6,7 @@ class_name FormScreenUIManager
 @onready var enterprise_edit: LineEdit = $MainContainer/FillEnterpriseContainer/UserEnterpriseLineEdit
 
 @onready var forms_verifier: FormsManager = $"../FormsManager"
-@onready var play_game_button: Button = $MainContainer/PlayGameButton
+@onready var play_game_button: TextureButton = $MainContainer/ContinueTextureButton
 
 
 func _ready() -> void:

@@ -4,13 +4,15 @@
 [ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/Labels/DescriptionLable.tres" id="1_qfqm7"]
 [ext_resource type="Theme" uid="uid://4ejgehnkbkyg" path="res://Themes/Labels/NameLable.tres" id="2_tto1b"]
 [ext_resource type="Texture2D" uid="uid://ii2akcx8huj3" path="res://Assets/Images/Logo/Bataki_Logo.png" id="3_4h3t3"]
-[ext_resource type="Theme" uid="uid://dawvgpb75n8id" path="res://Themes/Buttons/Button.tres" id="3_tto1b"]
-[ext_resource type="Theme" uid="uid://cc3j17kgvsgf6" path="res://Themes/Buttons/ButtonDescription.tres" id="4_372cc"]
+[ext_resource type="Texture2D" uid="uid://c34l827cc41t3" path="res://Assets/Images/Buttons/PlayButton.png" id="4_g3rn2"]
 [ext_resource type="Texture2D" uid="uid://bfrq5jpb024fx" path="res://Assets/Images/Rectangles/Rectangle.png" id="4_mcjlx"]
+[ext_resource type="Texture2D" uid="uid://dnfx52skukdmh" path="res://Assets/Images/Texts/HomeScreen/Toque para começar.png" id="5_4h3t3"]
 [ext_resource type="Theme" uid="uid://f86a300kpfiy" path="res://Themes/Labels/InputLable.tres" id="7_3q4aq"]
 [ext_resource type="Script" uid="uid://dc45xdogd84td" path="res://Scripts/UI/Home/Forms/forms_screen_ui_manager.gd" id="7_g3rn2"]
 [ext_resource type="Theme" uid="uid://dywslcynw6a0s" path="res://Themes/LineEdit/LineEditBase.tres" id="8_8wsfi"]
-[ext_resource type="FontFile" uid="uid://denphaglaaa5q" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-Bold.ttf" id="9_cme1u"]
+[ext_resource type="Texture2D" uid="uid://7jd6yr00sj6n" path="res://Assets/Images/Buttons/Forms/FormsContinuar.png" id="11_g3rn2"]
+[ext_resource type="Texture2D" uid="uid://dn43myjyh8cea" path="res://Assets/Images/Buttons/Forms/FormsContinuarDisabled.png" id="12_4h3t3"]
+[ext_resource type="Texture2D" uid="uid://bqc6fr6q8ue3t" path="res://Assets/Images/Buttons/Começar.png" id="13_g3rn2"]
 [ext_resource type="Script" uid="uid://dmph8yl8lp0yn" path="res://Scripts/Forms/forms_manager.gd" id="13_qg1uo"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lay20"]
@@ -37,14 +39,8 @@ color = Color(0, 0, 0, 0)
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_mcjlx"]
 color = Color(0, 0, 0, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lay20"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ecq0a"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qo4ak"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qo4ak"]
+load_path = "res://.godot/imported/Voltar ao início.png-3237d6628f9e0970981f159b05fee0b3.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iehq5"]
 load_path = "res://.godot/imported/HowToPlay.png-2e03f4f690207185059dcadade740180.ctex"
@@ -122,6 +118,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(-18, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RulesUI:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(3, 528)]
 }
 
 [sub_resource type="Animation" id="Animation_8wsfi"]
@@ -274,10 +282,10 @@ tracks/3/path = NodePath("RulesUI:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"times": PackedFloat32Array(0, 0.2),
+"times": PackedFloat32Array(0, 0.43333334),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
-"values": [Vector2(3, 327), Vector2(3, 107)]
+"values": [Vector2(3, 528), Vector2(3, 308)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_cme1u"]
@@ -310,10 +318,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -510.99997
-offset_top = -327.0
-offset_right = 1274.0
-offset_bottom = 573.0
+offset_left = -482.99997
+offset_top = -410.0
+offset_right = 1302.0
+offset_bottom = 1077.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.5939305, 0.5939305)
@@ -347,29 +355,19 @@ size_flags_vertical = 3
 texture = SubResource("CompressedTexture2D_ecq0a")
 stretch_mode = 3
 
-[node name="ButtonDescriptionLabel" type="Label" parent="MainScreenUI" unique_id=1421243375]
-layout_mode = 0
-offset_left = 64.0
-offset_top = 1024.0
-offset_right = 1849.0
-offset_bottom = 1056.0
-size_flags_vertical = 6
-theme = ExtResource("4_372cc")
-text = "TOQUE PARA COMEÇAR"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="StartGameButton" type="Button" parent="MainScreenUI" unique_id=1395890340]
-layout_mode = 0
-offset_left = 589.0
-offset_top = 776.0
-offset_right = 1209.0
-offset_bottom = 957.0
-scale = Vector2(1.2098312, 1.2098312)
+[node name="StartGameTextureButton" type="TextureButton" parent="MainScreenUI/VBoxContainer" unique_id=989517880]
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("3_tto1b")
-text = "JOGAR"
-icon_alignment = 1
+texture_normal = ExtResource("4_g3rn2")
+stretch_mode = 3
+
+[node name="TouchStartTextureRect" type="TextureRect" parent="MainScreenUI/VBoxContainer" unique_id=1440018651]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture = ExtResource("5_4h3t3")
+stretch_mode = 3
 
 [node name="FormScreenUI" type="Control" parent="." unique_id=2100398800]
 layout_mode = 3
@@ -504,39 +502,30 @@ custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_4h3t3")
 
-[node name="PlayGameButton" type="Button" parent="FormScreenUI/MainContainer" unique_id=52224082]
+[node name="ContinueTextureButton" type="TextureButton" parent="FormScreenUI/MainContainer" unique_id=1980007848]
 layout_mode = 2
-size_flags_vertical = 3
-theme = ExtResource("3_tto1b")
-theme_override_font_sizes/font_size = 56
-text = "CONTINUAR"
-icon_alignment = 1
+texture_normal = ExtResource("11_g3rn2")
+texture_disabled = ExtResource("12_4h3t3")
+stretch_mode = 3
 
 [node name="HSeparator5" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=694493125]
 custom_minimum_size = Vector2(0, 20)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_mcjlx")
 
-[node name="BackHomeButton" type="Button" parent="FormScreenUI/MainContainer" unique_id=2065016309]
+[node name="BackHomeButton" type="TextureButton" parent="FormScreenUI/MainContainer" unique_id=481656779]
 layout_mode = 2
-theme = ExtResource("4_372cc")
-theme_override_colors/font_color = Color(0.52156866, 0.52156866, 0.52156866, 1)
-theme_override_constants/line_spacing = 3
-theme_override_fonts/font = ExtResource("9_cme1u")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/normal = SubResource("StyleBoxFlat_lay20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ecq0a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qo4ak")
-text = "VOLTAR AO INICIO"
+texture_normal = SubResource("CompressedTexture2D_qo4ak")
+stretch_mode = 3
 
 [node name="RulesUI" type="Control" parent="." unique_id=972092332]
 visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 3.0
-offset_top = 327.0
+offset_top = 528.0
 offset_right = 43.0
-offset_bottom = 366.99988
+offset_bottom = 568.00006
 
 [node name="RulesContainer" type="VBoxContainer" parent="RulesUI" unique_id=252480106]
 layout_mode = 1
@@ -545,10 +534,10 @@ anchor_left = 13.725001
 anchor_top = 0.6250005
 anchor_right = 35.53365
 anchor_bottom = 18.059544
-offset_left = 28.999939
-offset_top = 13.0000305
-offset_right = 916.65405
-offset_bottom = 722.61993
+offset_left = 26.999878
+offset_top = -132.99994
+offset_right = 914.65405
+offset_bottom = 925.6205
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.46466368, 0.46466368)
@@ -570,7 +559,7 @@ texture = SubResource("CompressedTexture2D_qg1uo")
 stretch_mode = 3
 
 [node name="HSeparator" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1932306738]
-custom_minimum_size = Vector2(0, 50)
+custom_minimum_size = Vector2(0, 40)
 layout_mode = 2
 theme_override_styles/separator = SubResource("StyleBoxLine_nxtf7")
 
@@ -596,31 +585,34 @@ theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
 layout_mode = 2
 texture = SubResource("CompressedTexture2D_mcjlx")
 
-[node name="BackHomeButton" type="Button" parent="RulesUI" unique_id=1072544962]
-layout_mode = 0
-offset_left = 900.0
-offset_top = 938.0
-offset_right = 1082.0
-offset_bottom = 970.0
-theme = ExtResource("4_372cc")
-theme_override_colors/font_color = Color(0.52156866, 0.52156866, 0.52156866, 1)
-theme_override_constants/line_spacing = 3
-theme_override_fonts/font = ExtResource("9_cme1u")
-theme_override_font_sizes/font_size = 26
-theme_override_styles/normal = SubResource("StyleBoxFlat_lay20")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_ecq0a")
-theme_override_styles/hover = SubResource("StyleBoxFlat_qo4ak")
-text = "VOLTAR AO INICIO"
-
-[node name="StartGameButton" type="Button" parent="RulesUI" unique_id=2002835596]
-layout_mode = 0
-offset_left = 546.0
-offset_top = 727.0
-offset_right = 1426.0
-offset_bottom = 908.0
+[node name="HSeparator5" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=76171157]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("3_tto1b")
-text = "COMEÇAR"
+theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
+
+[node name="ContinueTextureButton" type="TextureButton" parent="RulesUI/RulesContainer" unique_id=214941823]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture_normal = ExtResource("13_g3rn2")
+stretch_mode = 3
+
+[node name="HSeparator6" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1393853918]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
+
+[node name="BackHomeButton" type="TextureButton" parent="RulesUI/RulesContainer" unique_id=785110989]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture_normal = SubResource("CompressedTexture2D_qo4ak")
+stretch_mode = 3
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=41413511]
 libraries/ = SubResource("AnimationLibrary_cme1u")
@@ -629,11 +621,11 @@ autoplay = &"main_screen_selected"
 [node name="FormsManager" type="Node" parent="." unique_id=306531227]
 script = ExtResource("13_qg1uo")
 
-[connection signal="pressed" from="MainScreenUI/StartGameButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="pressed" from="MainScreenUI/VBoxContainer/StartGameTextureButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="text_changed" from="FormScreenUI/MainContainer/FillNameContainer/UserNameLineEdit" to="." method="_on_user_name_line_edit_text_changed"]
 [connection signal="text_changed" from="FormScreenUI/MainContainer/FillEmailContainer/UserEmailLineEdit" to="." method="_on_user_email_line_edit_text_changed"]
 [connection signal="text_changed" from="FormScreenUI/MainContainer/FillEnterpriseContainer/UserEnterpriseLineEdit" to="." method="_on_user_enterprise_line_edit_text_changed"]
-[connection signal="pressed" from="FormScreenUI/MainContainer/PlayGameButton" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="FormScreenUI/MainContainer/ContinueTextureButton" to="." method="_on_play_game_button_pressed"]
 [connection signal="pressed" from="FormScreenUI/MainContainer/BackHomeButton" to="." method="_on_back_home_button_pressed"]
-[connection signal="pressed" from="RulesUI/BackHomeButton" to="." method="_on_back_home_button_pressed"]
-[connection signal="pressed" from="RulesUI/StartGameButton" to="." method="_on_rules_start_game_button_pressed"]
+[connection signal="pressed" from="RulesUI/RulesContainer/ContinueTextureButton" to="." method="_on_rules_start_game_button_pressed"]
+[connection signal="pressed" from="RulesUI/RulesContainer/BackHomeButton" to="." method="_on_back_home_button_pressed"]

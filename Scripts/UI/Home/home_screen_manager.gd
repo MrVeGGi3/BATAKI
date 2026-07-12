@@ -35,6 +35,7 @@ func _on_play_game_button_pressed() -> void:
 		animation_player.play("rules_screen_selected")
 
 func _on_back_home_button_pressed() -> void:
+	reset_totem_ui()
 	get_tree().reload_current_scene()
 
 func _on_rules_start_game_button_pressed() -> void:
