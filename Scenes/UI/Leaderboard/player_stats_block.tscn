@@ -2,9 +2,8 @@
 
 [ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/Labels/DescriptionLable.tres" id="1_edp0o"]
 [ext_resource type="FontFile" uid="uid://denphaglaaa5q" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-Bold.ttf" id="2_fos5t"]
+[ext_resource type="Texture2D" uid="uid://cvecujt8c73u8" path="res://Assets/Images/Background/StatsBase.png" id="tex1_21319"]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vukau"]
-load_path = "res://.godot/imported/StatsBase.png-d207bc0abf8ba924946f1d7df59ff793.ctex"
 
 [sub_resource type="Theme" id="Theme_unpns"]
 Label/colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
@@ -22,7 +21,7 @@ offset_bottom = 95.0
 layout_mode = 0
 offset_right = 826.0
 offset_bottom = 95.0
-texture = SubResource("CompressedTexture2D_vukau")
+texture = ExtResource("tex1_21319")
 
 [node name="PlayerPositionLabel" type="Label" parent="." unique_id=1767880797]
 layout_mode = 0

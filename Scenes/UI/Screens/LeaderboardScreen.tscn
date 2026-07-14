@@ -11,6 +11,7 @@
 [ext_resource type="Script" uid="uid://cqh75dc6qwlk4" path="res://Scripts/UI/Leaderboard/labels_text_updater.gd" id="8_s4ha6"]
 [ext_resource type="Script" uid="uid://djtx0t37oxiqr" path="res://Scripts/SQLData/sql_manipulator.gd" id="10_d2wp3"]
 [ext_resource type="FontVariation" uid="uid://087f1ii7yveq" path="res://Themes/Fonts/WellDoneTracking.tres" id="11_track"]
+[ext_resource type="Texture2D" uid="uid://dvpwlrjv7n3ck" path="res://Assets/Images/Background/LeaderboardBackground.png" id="tex1_87771"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_unpns"]
 color = Color(0, 0, 0, 0)
@@ -22,8 +23,6 @@ font_color = Color(0.5764706, 0.9882353, 0.3372549, 1)
 shadow_color = Color(0.42352942, 0.8980392, 0.14509805, 0.54901963)
 shadow_offset = Vector2(5, 5)
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xg2ye"]
-load_path = "res://.godot/imported/LeaderboardBackground.png-9e43bbbda7c05b97c387f7116ab456ab.ctex"
 
 [node name="LeaderboardScreen" type="CanvasLayer" unique_id=639524598]
 layer = 2
@@ -88,7 +87,7 @@ horizontal_alignment = 1
 
 [node name="RankingBoard" type="TextureRect" parent="VBoxContainer" unique_id=1447961327]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_xg2ye")
+texture = ExtResource("tex1_87771")
 
 [node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/RankingBoard" unique_id=261139451]
 layout_mode = 0

@@ -17,18 +17,14 @@
 [ext_resource type="Script" uid="uid://bi82csoolbaso" path="res://Scripts/Audios/gameplay_audio.gd" id="15_k7of7"]
 [ext_resource type="Script" uid="uid://b3ro3o4t1ts03" path="res://Scripts/Effects/particles_effect_manager.gd" id="16_part"]
 [ext_resource type="Texture2D" uid="uid://drjvy0w0dq7up" path="res://Assets/Images/Particles/Spark.png" id="17_spark"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rfjuc"]
-load_path = "res://.godot/imported/Sequência.png-1ffd4a8b1140617bd84fe5f22543cd83.ctex"
+[ext_resource type="Texture2D" uid="uid://csfk0rkmj01i" path="res://Assets/Images/Texts/Gameloop/Sequência.png" id="tex1_99250"]
+[ext_resource type="Texture2D" uid="uid://8ur7let31o7b" path="res://Assets/Images/Buttons/BatakiButtons/BatakiButtonNormal.png" id="tex2_74787"]
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_0rqbs"]
 color = Color(0, 0, 0, 0)
 
 [sub_resource type="StyleBoxLine" id="StyleBoxLine_drs1e"]
 color = Color(0, 0, 0, 0)
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8yreq"]
-load_path = "res://.godot/imported/BatakiButtonNormal.png-eefa88dca5d64e20d50684d50712d15f.ctex"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dxlp"]
 bg_color = Color(0.6, 0.6, 0.6, 0)
@@ -221,7 +217,7 @@ offset_bottom = 635.0
 
 [node name="TextureRect" type="TextureRect" parent="ScoreInterfaceContainer" unique_id=1064262309]
 layout_mode = 2
-texture = SubResource("CompressedTexture2D_rfjuc")
+texture = ExtResource("tex1_99250")
 stretch_mode = 3
 
 [node name="VSeparator" type="VSeparator" parent="ScoreInterfaceContainer" unique_id=73592676]
@@ -264,46 +260,46 @@ columns = 3
 
 [node name="BatakiTextureButton" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=247429866]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton2" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1584925549]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton3" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1552502242]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton4" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=558475379]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton5" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=2050234834]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton6" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1384596389]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton7" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1569630654]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton8" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=42310229]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="BatakiTextureButton9" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=24770036]
 layout_mode = 2
-texture_normal = SubResource("CompressedTexture2D_8yreq")
+texture_normal = ExtResource("tex2_74787")
 
 [node name="ExitButton" type="Button" parent="." unique_id=1004708233]
 layout_mode = 0
 offset_left = 503.0
-offset_top = 1601.0
+offset_top = 1631.0
 offset_right = 580.0
-offset_bottom = 1661.0
+offset_bottom = 1691.0
 theme_override_colors/font_color = Color(0.52156866, 0.52156866, 0.52156866, 1)
 theme_override_fonts/font = ExtResource("10_28su1")
 theme_override_font_sizes/font_size = 40
