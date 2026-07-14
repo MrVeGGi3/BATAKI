@@ -18,26 +18,42 @@ var combo_stream_5_sfx = preload("uid://cgbrirany2r8i")
 var game_bgm = preload("uid://dyrwbwfo7kyhk")
 var menu_bgm = preload("uid://bxo08t1aqywtl")
 
+var _active_sfx: Array[AudioStreamPlayer] = []
+
 func _ready() -> void:
 	add_child(music_player)
-	music_player.bus = "Music" 
+	music_player.bus = "Music"
 
 func play_music(stream: AudioStream) -> void:
 	if music_player.stream == stream and music_player.playing:
-		return 
-	
+		return
+
 	music_player.stream = stream
 	music_player.play()
 
 func play_sfx(stream: AudioStream) -> void:
 	if stream == null:
 		return
-		
-	var new_player = AudioStreamPlayer.new()
-	new_player.stream = stream
-	new_player.bus = "SFX"
-	
-	add_child(new_player)
-	new_player.play()
-	
-	new_player.finished.connect(func(): new_player.queue_free())
+
+	var sfx_player := AudioStreamPlayer.new()
+	sfx_player.stream = stream
+	sfx_player.bus = "SFX"
+
+	add_child(sfx_player)
+	_active_sfx.append(sfx_player)
+	sfx_player.play()
+
+	sfx_player.finished.connect(_free_sfx.bind(sfx_player))
+
+## stop() não emite "finished": quem para o som também precisa liberar o nó,
+## senão o player fica pendurado no singleton para sempre.
+func stop_all_sfx() -> void:
+	for sfx_player in _active_sfx.duplicate():
+		if is_instance_valid(sfx_player):
+			sfx_player.stop()
+			_free_sfx(sfx_player)
+	_active_sfx.clear()
+
+func _free_sfx(sfx_player: AudioStreamPlayer) -> void:
+	_active_sfx.erase(sfx_player)
+	sfx_player.queue_free()

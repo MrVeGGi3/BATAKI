@@ -218,9 +218,9 @@ tempo: é "quanto o jogador demorou para acertar", não a reação pura desde o 
 
 ```sql
 ORDER BY score DESC,
-         max_seq DESC,
-         CASE WHEN avg_time > 0 THEN avg_time ELSE 1e9 END ASC,
-         date_time ASC
+		 max_seq DESC,
+		 CASE WHEN avg_time > 0 THEN avg_time ELSE 1e9 END ASC,
+		 date_time ASC
 ```
 
 O `CASE` existe porque `avg_time = 0` significa "não acertou nada", e não "reagiu

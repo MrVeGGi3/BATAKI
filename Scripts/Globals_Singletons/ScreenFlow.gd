@@ -41,9 +41,15 @@ func go_to(screen: Screen) -> void:
 		push_error("Falha ao abrir a tela %s (%s): erro %s" % [
 			Screen.keys()[screen], SCENES[screen], error_string(erro)])
 
+func _input(event: InputEvent) -> void:
+	if event is InputEventKey and event.keycode == KEY_ESCAPE:
+		if event.pressed:
+			get_tree().quit()
+
 
 ## Volta ao início E descarta os dados do jogador atual.
 ## É o caminho de saída de qualquer estado — inatividade, botão de sair, fim de partida.
 func go_home() -> void:
+	AudioManager.stop_all_sfx()
 	GameManager.reset_run()
 	go_to(Screen.HOME)

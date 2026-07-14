@@ -15,6 +15,7 @@ func _ready() -> void:
 	# O timer de inatividade desta tela já foi ligado pelo ScreenFlow.
 
 func _on_play_again_texture_button_pressed() -> void:
+	AudioManager.stop_all_sfx()
 	AudioManager.play_sfx(AudioManager.click_sound)
 	ScreenFlow.go_to(ScreenFlow.Screen.COUNTDOWN)
 
