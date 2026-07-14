@@ -4,10 +4,10 @@ extends Node
 enum Estado { NORMAL = 0, TURN_ON = 1, ERROR = 2, CORRECT = 3 }
 
 const TEXTURAS = {
-	Estado.NORMAL: preload("uid://basdy54lbn6op"),
-	Estado.TURN_ON: preload("uid://d3rnmy060oyye"),
-	Estado.ERROR: preload("uid://banhs1bvs480t"),
-	Estado.CORRECT: preload("uid://cuqjua1rxql68")
+	Estado.NORMAL: preload("uid://8ur7let31o7b"),
+	Estado.TURN_ON: preload("uid://cnk63h242ces0"),
+	Estado.ERROR: preload("uid://xp3mvc81aqby") ,
+	Estado.CORRECT: preload("uid://d0cej6ijkcwfl")
 }
 
 func _mudar_estado_botao(botao: TextureButton, estado: Estado):
@@ -16,7 +16,6 @@ func _mudar_estado_botao(botao: TextureButton, estado: Estado):
 
 
 func turn_on_bataki(texture_r : TextureButton):
-	print("Estou alterando a textura do Bataki para o estado de sinalização")
 	_mudar_estado_botao(texture_r, Estado.TURN_ON)
 	
 func turn_off_bataki(texture_r :TextureButton):

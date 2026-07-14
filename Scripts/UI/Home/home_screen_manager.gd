@@ -1,7 +1,5 @@
 extends CanvasLayer
 
-@export var game_loop_scene = "res://Scenes/GameplayInterface.tscn"
-
 @onready var main_screen_ui: Control = $MainScreenUI
 @onready var form_screen_ui: FormScreenUIManager = $FormScreenUI
 @onready var rules_screen_ui: Control = $RulesUI
@@ -14,16 +12,20 @@ func _ready() -> void:
 	reset_totem_ui()
 
 func reset_totem_ui() -> void:
+	InactivityManager.stop_timer() 
+	AudioManager.play_music(AudioManager.menu_bgm)  
 	form_screen_ui.hide()
 	rules_screen_ui.hide()
 	main_screen_ui.show()
 	form_screen_ui.clear_fields()
 
 func _on_start_game_button_pressed() -> void:
+	AudioManager.play_sfx(AudioManager.click_sound)
 	InactivityManager.start_timer()
 	animation_player.play("form_screen_selected")
 
 func _on_play_game_button_pressed() -> void:
+	AudioManager.play_sfx(AudioManager.click_sound)
 	InactivityManager.reset_timer()
 	
 	var txt_name: String = form_screen_ui.name_edit.text
@@ -35,8 +37,9 @@ func _on_play_game_button_pressed() -> void:
 		animation_player.play("rules_screen_selected")
 
 func _on_back_home_button_pressed() -> void:
-	reset_totem_ui()
-	get_tree().reload_current_scene()
+	AudioManager.play_sfx(AudioManager.click_sound)
+	ScreenFlow.go_home()   # recarrega a Home E descarta o que o jogador já tinha digitado
 
 func _on_rules_start_game_button_pressed() -> void:
-	get_tree().change_scene_to_file(game_loop_scene)
+	AudioManager.play_sfx(AudioManager.click_sound)
+	ScreenFlow.go_to(ScreenFlow.Screen.COUNTDOWN)

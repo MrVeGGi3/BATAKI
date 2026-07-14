@@ -1,0 +1,589 @@
+[gd_scene format=3 uid="uid://b804xpajm1fpd"]
+
+[ext_resource type="Script" uid="uid://da2iyxedkebfw" path="res://Scripts/UI/Gameplay/gameplay_screen_ui_manager.gd" id="1_ddfqs"]
+[ext_resource type="Script" uid="uid://vul53v5hn8yl" path="res://Scripts/Effects/labels_effect_manager.gd" id="2_613lp"]
+[ext_resource type="FontFile" uid="uid://x8ft2gbnkd46" path="res://Assets/Fonts/Barlow/Barlow-Black.ttf" id="2_auipq"]
+[ext_resource type="Script" uid="uid://4og2njqop2y" path="res://Scripts/Effects/textures_effect_manager.gd" id="2_uax6h"]
+[ext_resource type="Script" uid="uid://lj73m4iyekjk" path="res://Scripts/Effects/gameplay_buttons_effect_manager.gd" id="3_uax6h"]
+[ext_resource type="Script" uid="uid://cfap5142efohq" path="res://Scripts/Mechanics/score_counter_manager.gd" id="4_613lp"]
+[ext_resource type="Script" uid="uid://cplxaspnresr4" path="res://Scripts/Mechanics/bataki_sorter.gd" id="5_rfjuc"]
+[ext_resource type="Texture2D" uid="uid://c6dxm3fmfgn2d" path="res://Assets/Images/GameScreen/PontosBackground.png" id="6_auipq"]
+[ext_resource type="Script" uid="uid://cc37ul44qcd4x" path="res://Scripts/Mechanics/bataki_timer.gd" id="6_ck1ii"]
+[ext_resource type="Texture2D" uid="uid://dyd83efjspydt" path="res://Assets/Images/GameScreen/COMBO.png" id="8_rfjuc"]
+[ext_resource type="FontFile" uid="uid://b2gucl7clv0n6" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-ExtraBold.ttf" id="10_28su1"]
+[ext_resource type="Texture2D" uid="uid://co6ykdntkc8kw" path="res://Assets/Images/GameScreen/TimerTextureRect.png" id="11_jxxbe"]
+[ext_resource type="Theme" uid="uid://dfdlwpesril2e" path="res://Themes/Labels/MultiplierComboLable.tres" id="11_qd0ov"]
+[ext_resource type="Script" uid="uid://ch1ghvxt6cqkv" path="res://Scripts/UI/Gameplay/bataki_grid_ui.gd" id="15_grid"]
+[ext_resource type="Script" uid="uid://bi82csoolbaso" path="res://Scripts/Audios/gameplay_audio.gd" id="15_k7of7"]
+[ext_resource type="Script" uid="uid://b3ro3o4t1ts03" path="res://Scripts/Effects/particles_effect_manager.gd" id="16_part"]
+[ext_resource type="Texture2D" uid="uid://drjvy0w0dq7up" path="res://Assets/Images/Particles/Spark.png" id="17_spark"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rfjuc"]
+load_path = "res://.godot/imported/Sequência.png-1ffd4a8b1140617bd84fe5f22543cd83.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_0rqbs"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_drs1e"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8yreq"]
+load_path = "res://.godot/imported/BatakiButtonNormal.png-eefa88dca5d64e20d50684d50712d15f.ctex"
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8dxlp"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_rfjuc"]
+
+[sub_resource type="Gradient" id="Gradient_hit"]
+offsets = PackedFloat32Array(0, 0.25, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5764706, 0.9882353, 0.3372549, 1, 0.5764706, 0.9882353, 0.3372549, 0)
+
+[sub_resource type="Gradient" id="Gradient_combo"]
+offsets = PackedFloat32Array(0, 0.3, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.5764706, 0.9882353, 0.3372549, 1, 0.5764706, 0.9882353, 0.3372549, 0)
+
+[sub_resource type="Animation" id="Animation_613lp"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ComboUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ComboUI:scale")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ComboUI:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(500, 309)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ComboUI:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_rfjuc"]
+resource_name = "combo_update_anim"
+length = 0.93333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ComboUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.033333335, 0.84999996),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ComboUI:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.21),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(380.00003, 1228), Vector2(312, 863)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ComboUI:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.43333334, 0.8333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0.2, 0.2), Vector2(1, 1), Vector2(2, 2), Vector2(0.2, 0.2)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ComboUI:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.03333333, 0.26666668, 0.8333333),
+"transitions": PackedFloat32Array(1.9318731, 1, 1.7411014),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ck1ii"]
+_data = {
+&"RESET": SubResource("Animation_613lp"),
+&"combo_update_anim": SubResource("Animation_rfjuc")
+}
+
+[node name="GameplayScreen" type="Control" unique_id=489935930]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ddfqs")
+
+[node name="PointsTimerContainer" type="HBoxContainer" parent="." unique_id=1767713612]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 353.0
+offset_right = 1062.0
+offset_bottom = 553.0
+
+[node name="PointsUI" type="Control" parent="PointsTimerContainer" unique_id=513294842]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PointsTextureRect" type="TextureRect" parent="PointsTimerContainer/PointsUI" unique_id=1561337662]
+layout_mode = 0
+offset_right = 446.0
+offset_bottom = 180.0
+texture = ExtResource("6_auipq")
+stretch_mode = 3
+
+[node name="PointsLabel" type="Label" parent="PointsTimerContainer/PointsUI" unique_id=841371613]
+layout_mode = 0
+offset_left = 56.0
+offset_top = 65.0
+offset_right = 207.0
+offset_bottom = 233.0
+theme_override_colors/font_color = Color(0.5764706, 0.9882353, 0.3372549, 1)
+theme_override_fonts/font = ExtResource("2_auipq")
+theme_override_font_sizes/font_size = 88
+text = "0"
+
+[node name="TimerUI" type="Control" parent="PointsTimerContainer" unique_id=1960720659]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="TimerTextureRect" type="TextureRect" parent="PointsTimerContainer/TimerUI" unique_id=217071990]
+layout_mode = 0
+offset_right = 446.0
+offset_bottom = 180.0
+texture = ExtResource("11_jxxbe")
+
+[node name="TimerLabel" type="Label" parent="PointsTimerContainer/TimerUI" unique_id=340605019]
+layout_mode = 0
+offset_left = 237.0
+offset_top = 66.0
+offset_right = 409.0
+offset_bottom = 210.0
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_fonts/font = ExtResource("2_auipq")
+theme_override_font_sizes/font_size = 88
+text = "18s"
+horizontal_alignment = 2
+
+[node name="ScoreInterfaceContainer" type="HBoxContainer" parent="." unique_id=1667978174]
+layout_mode = 0
+offset_left = 270.0
+offset_top = 545.0
+offset_right = 810.0
+offset_bottom = 635.0
+
+[node name="TextureRect" type="TextureRect" parent="ScoreInterfaceContainer" unique_id=1064262309]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_rfjuc")
+stretch_mode = 3
+
+[node name="VSeparator" type="VSeparator" parent="ScoreInterfaceContainer" unique_id=73592676]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_0rqbs")
+
+[node name="SequenceNumberLabel" type="Label" parent="ScoreInterfaceContainer" unique_id=1510389239]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_fonts/font = ExtResource("2_auipq")
+theme_override_font_sizes/font_size = 60
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSeparator2" type="VSeparator" parent="ScoreInterfaceContainer" unique_id=482631653]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_drs1e")
+
+[node name="MultiplierLabel" type="Label" parent="ScoreInterfaceContainer" unique_id=959189329]
+layout_mode = 2
+size_flags_horizontal = 3
+theme = ExtResource("11_qd0ov")
+theme_override_font_sizes/font_size = 48
+text = "x1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BatakiTextureGridContainer" type="GridContainer" parent="." unique_id=1553154017]
+z_index = 1
+layout_mode = 0
+offset_left = 88.0
+offset_top = 647.0
+offset_right = 996.0
+offset_bottom = 1555.0
+theme_override_constants/h_separation = 40
+theme_override_constants/v_separation = 40
+columns = 3
+
+[node name="BatakiTextureButton" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=247429866]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton2" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1584925549]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton3" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1552502242]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton4" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=558475379]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton5" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=2050234834]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton6" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1384596389]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton7" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=1569630654]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton8" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=42310229]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="BatakiTextureButton9" type="TextureButton" parent="BatakiTextureGridContainer" unique_id=24770036]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_8yreq")
+
+[node name="ExitButton" type="Button" parent="." unique_id=1004708233]
+layout_mode = 0
+offset_left = 503.0
+offset_top = 1601.0
+offset_right = 580.0
+offset_bottom = 1661.0
+theme_override_colors/font_color = Color(0.52156866, 0.52156866, 0.52156866, 1)
+theme_override_fonts/font = ExtResource("10_28su1")
+theme_override_font_sizes/font_size = 40
+theme_override_styles/normal = SubResource("StyleBoxFlat_8dxlp")
+text = "SAIR"
+
+[node name="ComboUI" type="Control" parent="." unique_id=1912866824]
+visible = false
+z_index = 3
+anchors_preset = 0
+offset_left = 500.0
+offset_top = 309.0
+offset_right = 539.9993
+offset_bottom = 349.0003
+
+[node name="ComboTextureRect" type="TextureRect" parent="ComboUI" unique_id=2129812348]
+layout_mode = 0
+offset_right = 1803.0
+offset_bottom = 1069.0
+scale = Vector2(0.12463773, 0.12463773)
+texture = ExtResource("8_rfjuc")
+stretch_mode = 3
+
+[node name="ComboCounterLabel" type="Label" parent="ComboUI" unique_id=1996904802]
+layout_mode = 0
+offset_left = 14.999696
+offset_top = 90.00001
+offset_right = 108.999695
+offset_bottom = 166.0
+theme_override_colors/font_color = Color(0.5764706, 0.9882353, 0.3372549, 1)
+theme_override_fonts/font = ExtResource("2_auipq")
+theme_override_font_sizes/font_size = 63
+theme_override_styles/normal = SubResource("StyleBoxEmpty_rfjuc")
+text = "x5!"
+vertical_alignment = 1
+
+[node name="ParticlesLayer" type="Node2D" parent="." unique_id=1249541141]
+z_index = 2
+
+[node name="HitParticles1" type="CPUParticles2D" parent="ParticlesLayer" unique_id=1039049262]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles2" type="CPUParticles2D" parent="ParticlesLayer" unique_id=4885527]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles3" type="CPUParticles2D" parent="ParticlesLayer" unique_id=1936855976]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles4" type="CPUParticles2D" parent="ParticlesLayer" unique_id=781425423]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles5" type="CPUParticles2D" parent="ParticlesLayer" unique_id=707743372]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles6" type="CPUParticles2D" parent="ParticlesLayer" unique_id=1998349448]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles7" type="CPUParticles2D" parent="ParticlesLayer" unique_id=1453680079]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles8" type="CPUParticles2D" parent="ParticlesLayer" unique_id=627254819]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="HitParticles9" type="CPUParticles2D" parent="ParticlesLayer" unique_id=923555111]
+emitting = false
+amount = 24
+texture = ExtResource("17_spark")
+lifetime = 0.6
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 20.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 900)
+initial_velocity_min = 180.0
+initial_velocity_max = 420.0
+damping_min = 40.0
+damping_max = 80.0
+scale_amount_min = 0.15
+scale_amount_max = 0.35
+color_ramp = SubResource("Gradient_hit")
+
+[node name="ComboParticles" type="CPUParticles2D" parent="ParticlesLayer" unique_id=1315028730]
+position = Vector2(424, 930)
+emitting = false
+amount = 60
+texture = ExtResource("17_spark")
+lifetime = 1.1
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 40.0
+direction = Vector2(0, -1)
+spread = 180.0
+gravity = Vector2(0, 800)
+initial_velocity_min = 250.0
+initial_velocity_max = 600.0
+damping_min = 20.0
+damping_max = 60.0
+scale_amount_min = 0.2
+scale_amount_max = 0.5
+color_ramp = SubResource("Gradient_combo")
+
+[node name="LabelsTextManager" type="Node" parent="." unique_id=749129306 node_paths=PackedStringArray("points_label", "timer_label", "streak_combo_label", "multiplier_label", "sequence_label")]
+script = ExtResource("2_613lp")
+points_label = NodePath("../PointsTimerContainer/PointsUI/PointsLabel")
+timer_label = NodePath("../PointsTimerContainer/TimerUI/TimerLabel")
+streak_combo_label = NodePath("../ComboUI/ComboCounterLabel")
+multiplier_label = NodePath("../ScoreInterfaceContainer/MultiplierLabel")
+sequence_label = NodePath("../ScoreInterfaceContainer/SequenceNumberLabel")
+
+[node name="TexturesEffectManager" type="Node" parent="." unique_id=888285382 node_paths=PackedStringArray("timer_background")]
+script = ExtResource("2_uax6h")
+timer_background = NodePath("../PointsTimerContainer/TimerUI/TimerTextureRect")
+
+[node name="ButtonEffectManager" type="Node" parent="." unique_id=127562811]
+script = ExtResource("3_uax6h")
+
+[node name="ParticleEffectManager" type="Node" parent="." unique_id=1646883581 node_paths=PackedStringArray("hit_emitters", "combo_emitter")]
+script = ExtResource("16_part")
+hit_emitters = [NodePath("../ParticlesLayer/HitParticles1"), NodePath("../ParticlesLayer/HitParticles2"), NodePath("../ParticlesLayer/HitParticles3"), NodePath("../ParticlesLayer/HitParticles4"), NodePath("../ParticlesLayer/HitParticles5"), NodePath("../ParticlesLayer/HitParticles6"), NodePath("../ParticlesLayer/HitParticles7"), NodePath("../ParticlesLayer/HitParticles8"), NodePath("../ParticlesLayer/HitParticles9")]
+combo_emitter = NodePath("../ParticlesLayer/ComboParticles")
+
+[node name="ScoreCounterManager" type="Node" parent="." unique_id=2059256860 node_paths=PackedStringArray("bataki_sorter")]
+script = ExtResource("4_613lp")
+bataki_sorter = NodePath("../BatakiSorter")
+
+[node name="BatakiTimer" type="Node" parent="." unique_id=52715134]
+script = ExtResource("6_ck1ii")
+
+[node name="BatakiSorter" type="Node" parent="." unique_id=254065595]
+script = ExtResource("5_rfjuc")
+
+[node name="BatakiGridUI" type="Node" parent="." unique_id=558024506 node_paths=PackedStringArray("buttons", "button_effect_manager", "particle_effect_manager")]
+script = ExtResource("15_grid")
+buttons = [NodePath("../BatakiTextureGridContainer/BatakiTextureButton"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton2"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton3"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton4"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton5"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton6"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton7"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton8"), NodePath("../BatakiTextureGridContainer/BatakiTextureButton9")]
+button_effect_manager = NodePath("../ButtonEffectManager")
+particle_effect_manager = NodePath("../ParticleEffectManager")
+
+[node name="GameplayAudio" type="Node" parent="." unique_id=2074519407]
+script = ExtResource("15_k7of7")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1265644443]
+libraries/ = SubResource("AnimationLibrary_ck1ii")
+
+[connection signal="pressed" from="ExitButton" to="." method="_on_exit_label_pressed"]

@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://dt26m5m3bgla2"]
+
+[ext_resource type="PackedScene" uid="uid://4ai0vygblwo1" path="res://Scenes/Shaders/ShadersComboScreen.tscn" id="1_1ajvj"]
+[ext_resource type="PackedScene" uid="uid://cjgpi2ot6g1m5" path="res://Scenes/UI/Screens/LogoScreen.tscn" id="2_av2dc"]
+[ext_resource type="PackedScene" uid="uid://daji8kjj41iq0" path="res://Scenes/UI/Screens/CDScreen.tscn" id="3_1ajvj"]
+
+[node name="CdInterface" type="Control" unique_id=1756216931]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ShaderCombo" parent="." unique_id=484204530 instance=ExtResource("1_1ajvj")]
+
+[node name="LogoScreen" parent="." unique_id=1851397711 instance=ExtResource("2_av2dc")]
+
+[node name="CdScreen" parent="." unique_id=292248554 instance=ExtResource("3_1ajvj")]

@@ -1,10 +1,11 @@
 extends Node
 
 ##Valor limite de Tempo para voltar na Tela Inicial
-@export var max_counter_time: float = 10.0
+@export var max_counter_time: float = 20.0
 
 var actual_timer_counter: float = 0.0
-var can_run_timer: bool = true
+
+var can_run_timer: bool = false
 
 func _process(delta: float) -> void:
 	if can_run_timer and actual_timer_counter <= max_counter_time:
@@ -18,8 +19,7 @@ func _input(event: InputEvent) -> void:
 
 func on_time_expired() -> void:
 	stop_timer()
-	print("Tempo esgotado por inatividade!")
-	GameManager.return_to_home()
+	ScreenFlow.go_home()
 
 func reset_timer() -> void:
 	actual_timer_counter = 0.0

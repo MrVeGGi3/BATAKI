@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://bskgqdh4lx31t"]
+
+[ext_resource type="PackedScene" uid="uid://b804xpajm1fpd" path="res://Scenes/UI/GameLoop/GameplayScreen.tscn" id="3_11tjt"]
+
+[node name="GameScreen" type="CanvasLayer" unique_id=1751228481]
+
+[node name="GameplayScreen" parent="." unique_id=489935930 instance=ExtResource("3_11tjt")]
+anchors_preset = -1

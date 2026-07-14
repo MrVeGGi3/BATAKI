@@ -1,0 +1,185 @@
+[gd_scene format=3 uid="uid://d4qtsapbmg0w"]
+
+[ext_resource type="Script" uid="uid://xrx8ivy8flxg" path="res://Scripts/Leaderboard/leaderboard_screen.gd" id="1_wocfy"]
+[ext_resource type="Texture2D" uid="uid://be08jy1apjbuj" path="res://Assets/Images/Texts/Leaderboard/Pontuação.png" id="2_wocfy"]
+[ext_resource type="FontFile" uid="uid://x8ft2gbnkd46" path="res://Assets/Fonts/Barlow/Barlow-Black.ttf" id="3_d2wp3"]
+[ext_resource type="Texture2D" uid="uid://cq0xtylrwx3vh" path="res://Assets/Images/Buttons/Leaderboards/JogarDeNovo.png" id="4_2pf0w"]
+[ext_resource type="FontFile" uid="uid://b2gucl7clv0n6" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-ExtraBold.ttf" id="5_2pf0w"]
+[ext_resource type="Texture2D" uid="uid://c7boidc0pcpck" path="res://Assets/Images/Buttons/Leaderboards/Inicio.png" id="5_f4ybj"]
+[ext_resource type="PackedScene" uid="uid://ce3sj0k32yeby" path="res://Scenes/UI/Leaderboard/player_stats_block.tscn" id="6_74fbi"]
+[ext_resource type="Script" uid="uid://dyte4pusryqxh" path="res://Scripts/UI/Leaderboard/player_stats_block_ui_manager.gd" id="7_2m6x4"]
+[ext_resource type="Script" uid="uid://cqh75dc6qwlk4" path="res://Scripts/UI/Leaderboard/labels_text_updater.gd" id="8_s4ha6"]
+[ext_resource type="Script" uid="uid://djtx0t37oxiqr" path="res://Scripts/SQLData/sql_manipulator.gd" id="10_d2wp3"]
+[ext_resource type="FontVariation" uid="uid://087f1ii7yveq" path="res://Themes/Fonts/WellDoneTracking.tres" id="11_track"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_unpns"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_unpns"]
+font = ExtResource("3_d2wp3")
+font_size = 220
+font_color = Color(0.5764706, 0.9882353, 0.3372549, 1)
+shadow_color = Color(0.42352942, 0.8980392, 0.14509805, 0.54901963)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xg2ye"]
+load_path = "res://.godot/imported/LeaderboardBackground.png-9e43bbbda7c05b97c387f7116ab456ab.ctex"
+
+[node name="LeaderboardScreen" type="CanvasLayer" unique_id=639524598]
+layer = 2
+script = ExtResource("1_wocfy")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=446634037]
+offset_left = 52.0
+offset_top = 458.00003
+offset_right = 1021.0
+offset_bottom = 1575.0
+scale = Vector2(1.0100828, 1.0100828)
+
+[node name="WellDoneRichTextLabel" type="RichTextLabel" parent="VBoxContainer" unique_id=852403141]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.42352942, 0.8980392, 0.14509805, 1)
+theme_override_fonts/normal_font = ExtResource("11_track")
+theme_override_font_sizes/normal_font_size = 26
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="VBoxContainer" unique_id=1689593710]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_unpns")
+
+[node name="YourScoreTextureRect" type="TextureRect" parent="VBoxContainer" unique_id=460278191]
+layout_mode = 2
+texture = ExtResource("2_wocfy")
+stretch_mode = 3
+
+[node name="TotalScoreLabel" type="Label" parent="VBoxContainer" unique_id=689440706]
+layout_mode = 2
+text = "777"
+label_settings = SubResource("LabelSettings_unpns")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsContainer" type="VBoxContainer" parent="VBoxContainer" unique_id=124485081]
+layout_mode = 2
+
+[node name="MaxSeqRichTextLabel" type="RichTextLabel" parent="VBoxContainer/StatsContainer" unique_id=1886178079]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_fonts/normal_font = ExtResource("5_2pf0w")
+theme_override_font_sizes/normal_font_size = 30
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="AvgReacRichTextLabel" type="RichTextLabel" parent="VBoxContainer/StatsContainer" unique_id=1721012849]
+layout_mode = 2
+theme_override_colors/default_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_fonts/normal_font = ExtResource("5_2pf0w")
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 40
+bbcode_enabled = true
+fit_content = true
+horizontal_alignment = 1
+
+[node name="RankingBoard" type="TextureRect" parent="VBoxContainer" unique_id=1447961327]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_xg2ye")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/RankingBoard" unique_id=261139451]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 92.0
+offset_right = 907.0
+offset_bottom = 492.0
+horizontal_scroll_mode = 0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/RankingBoard/ScrollContainer" unique_id=210106980]
+layout_mode = 2
+alignment = 1
+
+[node name="PlayerStatsBlock" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=268225068 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock2" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=18309258 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock3" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=90555685 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock4" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=321037922 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock5" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=1273907439 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock6" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=549421650 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock7" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=1534518295 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock8" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=1200088395 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock9" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=1725391937 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="PlayerStatsBlock10" parent="VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer" unique_id=807995303 instance=ExtResource("6_74fbi")]
+layout_mode = 2
+size_flags_horizontal = 2
+size_flags_vertical = 0
+
+[node name="ButtonsContainer" type="HBoxContainer" parent="VBoxContainer" unique_id=80119209]
+layout_mode = 2
+
+[node name="PlayAgainTextureButton" type="TextureButton" parent="VBoxContainer/ButtonsContainer" unique_id=569748849]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(-30, 0)
+texture_normal = ExtResource("4_2pf0w")
+stretch_mode = 3
+
+[node name="GoHomeTextureButton" type="TextureButton" parent="VBoxContainer/ButtonsContainer" unique_id=953675240]
+layout_mode = 2
+size_flags_horizontal = 3
+offset_transform_enabled = true
+offset_transform_position = Vector2(0, -15.075)
+texture_normal = ExtResource("5_f4ybj")
+stretch_mode = 3
+
+[node name="PlayerStatsBlockUIManager" type="Node" parent="." unique_id=2125352166 node_paths=PackedStringArray("stats_blocks")]
+script = ExtResource("7_2m6x4")
+stats_blocks = [NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock2"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock3"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock4"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock5"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock6"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock7"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock8"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock9"), NodePath("../VBoxContainer/RankingBoard/ScrollContainer/VBoxContainer/PlayerStatsBlock10")]
+
+[node name="LabelsTextUpdater" type="Node" parent="." unique_id=2052232772]
+script = ExtResource("8_s4ha6")
+
+[node name="SQLManipulator" type="Node" parent="." unique_id=1905362646]
+script = ExtResource("10_d2wp3")
+
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/PlayAgainTextureButton" to="." method="_on_play_again_texture_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/ButtonsContainer/GoHomeTextureButton" to="." method="_on_go_home_texture_button_pressed"]

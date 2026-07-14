@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://ce3sj0k32yeby"]
+
+[ext_resource type="Theme" uid="uid://dskj8a102duaa" path="res://Themes/Labels/DescriptionLable.tres" id="1_edp0o"]
+[ext_resource type="FontFile" uid="uid://denphaglaaa5q" path="res://Assets/Fonts/Barlow Semi Condensed/BarlowSemiCondensed-Bold.ttf" id="2_fos5t"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vukau"]
+load_path = "res://.godot/imported/StatsBase.png-d207bc0abf8ba924946f1d7df59ff793.ctex"
+
+[sub_resource type="Theme" id="Theme_unpns"]
+Label/colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+Label/font_sizes/font_size = 36
+Label/fonts/font = ExtResource("2_fos5t")
+
+[node name="PlayerStatsBlock" type="Control" unique_id=268225068]
+custom_minimum_size = Vector2(826, 95)
+layout_mode = 3
+anchors_preset = 0
+offset_right = 826.0
+offset_bottom = 95.0
+
+[node name="BlockBackTextureRect" type="TextureRect" parent="." unique_id=663899587]
+layout_mode = 0
+offset_right = 826.0
+offset_bottom = 95.0
+texture = SubResource("CompressedTexture2D_vukau")
+
+[node name="PlayerPositionLabel" type="Label" parent="." unique_id=1767880797]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 26.0
+offset_right = 77.0
+offset_bottom = 70.0
+theme = ExtResource("1_edp0o")
+theme_override_font_sizes/font_size = 36
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerNameLabel" type="Label" parent="." unique_id=1716865088]
+layout_mode = 0
+offset_left = 130.0
+offset_top = 27.0
+offset_right = 530.0
+offset_bottom = 71.0
+theme = SubResource("Theme_unpns")
+text = "Matheus Veras Soares"
+vertical_alignment = 1
+
+[node name="PlayerPointsLabel" type="Label" parent="." unique_id=470139087]
+layout_mode = 0
+offset_left = 749.0
+offset_top = 26.0
+offset_right = 799.0
+offset_bottom = 70.0
+theme = ExtResource("1_edp0o")
+theme_override_font_sizes/font_size = 36
+text = "777"
+horizontal_alignment = 2
+vertical_alignment = 1

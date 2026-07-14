@@ -1,0 +1,198 @@
+[gd_scene format=3 uid="uid://daji8kjj41iq0"]
+
+[ext_resource type="Script" uid="uid://ddp0c3qn5pxsq" path="res://Scripts/Mechanics/cd_animation.gd" id="1_sywoo"]
+[ext_resource type="Texture2D" uid="uid://b6aibwyldmybg" path="res://Assets/Images/Texts/Countdown/Prepare-se.png" id="2_ty0dx"]
+[ext_resource type="Texture2D" uid="uid://2x284s4wgddg" path="res://Assets/Images/Effects/CountDownGradient.png" id="3_vi55j"]
+[ext_resource type="Texture2D" uid="uid://dqvdpodgifkfl" path="res://Assets/Images/Texts/Countdown/3.png" id="4_jkeej"]
+[ext_resource type="Texture2D" uid="uid://bffxcwvaxa4in" path="res://Assets/Images/Texts/Countdown/2.png" id="5_wgnii"]
+[ext_resource type="Texture2D" uid="uid://c6giid8n1qbh6" path="res://Assets/Images/Texts/Countdown/1.png" id="6_jrqos"]
+[ext_resource type="Texture2D" uid="uid://cj57r2rn05id3" path="res://Assets/Images/Texts/Countdown/JÁ!.png" id="7_uiqum"]
+
+[sub_resource type="Animation" id="Animation_v1857"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountdownTextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountdownTextureRect:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [null]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CountdownTextureRect:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(40, 610)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CountdownTextureRect:scale")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CountdownTextureRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 700)]
+}
+
+[sub_resource type="Animation" id="Animation_blm7k"]
+resource_name = "countdown_animation"
+length = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CountdownTextureRect:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2.8333333, 3.0666666),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CountdownTextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1, 2.04, 2.9, 3.0333333),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(40, 610), Vector2(40, 610), Vector2(40, 610), Vector2(40, 610), Vector2(40, 610)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("CountdownTextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("CountdownTextureRect:texture")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 1, 2.0666666, 3),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("4_jkeej"), ExtResource("5_wgnii"), ExtResource("6_jrqos"), ExtResource("7_uiqum")]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CountdownTextureRect:size")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1000, 700)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath(".")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(3.9333334),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"_change_game_screen"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_yba0c"]
+_data = {
+&"RESET": SubResource("Animation_v1857"),
+&"countdown_animation": SubResource("Animation_blm7k")
+}
+
+[node name="CdScreen" type="CanvasLayer" unique_id=292248554]
+layer = 2
+
+[node name="CdAnimation" type="Control" parent="." unique_id=1247823060]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_sywoo")
+
+[node name="GradientTextureRect" type="TextureRect" parent="CdAnimation" unique_id=1550243427]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_vi55j")
+
+[node name="PrepareTextureRect" type="TextureRect" parent="CdAnimation" unique_id=1636444973]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 587.0
+offset_right = 688.0
+offset_bottom = 627.0
+texture = ExtResource("2_ty0dx")
+stretch_mode = 3
+
+[node name="CountdownTextureRect" type="TextureRect" parent="CdAnimation" unique_id=439411905]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 610.0
+offset_right = 1040.0
+offset_bottom = 1310.0
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CdAnimation" unique_id=1284510738]
+libraries/ = SubResource("AnimationLibrary_yba0c")
+autoplay = &"countdown_animation"

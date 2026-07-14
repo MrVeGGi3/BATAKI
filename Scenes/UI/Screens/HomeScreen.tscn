@@ -1,0 +1,631 @@
+[gd_scene format=3 uid="uid://bafecv0k4qnv8"]
+
+[ext_resource type="Script" uid="uid://b6vd3gv7witv" path="res://Scripts/UI/Home/home_screen_manager.gd" id="1_5vlix"]
+[ext_resource type="Theme" uid="uid://4ejgehnkbkyg" path="res://Themes/Labels/NameLable.tres" id="2_tto1b"]
+[ext_resource type="Texture2D" uid="uid://ii2akcx8huj3" path="res://Assets/Images/Logo/Bataki_Logo.png" id="3_4h3t3"]
+[ext_resource type="Texture2D" uid="uid://c34l827cc41t3" path="res://Assets/Images/Buttons/PlayButton.png" id="4_g3rn2"]
+[ext_resource type="Texture2D" uid="uid://bfrq5jpb024fx" path="res://Assets/Images/Rectangles/Rectangle.png" id="4_mcjlx"]
+[ext_resource type="Texture2D" uid="uid://dnfx52skukdmh" path="res://Assets/Images/Texts/HomeScreen/Toque para começar.png" id="5_4h3t3"]
+[ext_resource type="Theme" uid="uid://f86a300kpfiy" path="res://Themes/Labels/InputLable.tres" id="7_3q4aq"]
+[ext_resource type="Texture2D" uid="uid://bd4g06dbo3od1" path="res://Assets/Images/Texts/Description/Passo1de2.png" id="7_7pb5f"]
+[ext_resource type="Script" uid="uid://dc45xdogd84td" path="res://Scripts/UI/Home/Forms/forms_screen_ui_manager.gd" id="7_g3rn2"]
+[ext_resource type="Theme" uid="uid://dywslcynw6a0s" path="res://Themes/LineEdit/LineEditBase.tres" id="8_8wsfi"]
+[ext_resource type="Texture2D" uid="uid://7jd6yr00sj6n" path="res://Assets/Images/Buttons/Forms/FormsContinuar.png" id="11_g3rn2"]
+[ext_resource type="Texture2D" uid="uid://dn43myjyh8cea" path="res://Assets/Images/Buttons/Forms/FormsContinuarDisabled.png" id="12_4h3t3"]
+[ext_resource type="Texture2D" uid="uid://bqc6fr6q8ue3t" path="res://Assets/Images/Buttons/Começar.png" id="13_g3rn2"]
+[ext_resource type="Script" uid="uid://dmph8yl8lp0yn" path="res://Scripts/Forms/forms_manager.gd" id="13_qg1uo"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_lay20"]
+load_path = "res://.godot/imported/Arcade_ReactionGame.png-da0b7183dc55f8c46d2c5b1303fffca4.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_unpns"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ecq0a"]
+load_path = "res://.godot/imported/CallActionHomeScreen.png-8ba9650422e3277d2c0fefb877bd411d.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_iehq5"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_qg1uo"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_g3rn2"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_4h3t3"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_mcjlx"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qo4ak"]
+load_path = "res://.godot/imported/Voltar ao início.png-3237d6628f9e0970981f159b05fee0b3.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_iehq5"]
+load_path = "res://.godot/imported/HowToPlay.png-2e03f4f690207185059dcadade740180.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_7u7q5"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qg1uo"]
+load_path = "res://.godot/imported/AsRegras.png-98a82065f54090dbd7eff5c3ccbde5d7.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_nxtf7"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_g3rn2"]
+load_path = "res://.godot/imported/Rule1.png-b07f06af914386b23746f20d6ab2319a.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_lay20"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_4h3t3"]
+load_path = "res://.godot/imported/Rule2.png-dbecd4eddd3540fd74d553489baf0ac9.ctex"
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_8hfop"]
+color = Color(0, 0, 0, 0)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mcjlx"]
+load_path = "res://.godot/imported/Rules3.png-a5ca08b930265bb6196f7fff5378d664.ctex"
+
+[sub_resource type="Animation" id="Animation_g3rn2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RulesUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormScreenUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MainScreenUI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MainScreenUI:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-18, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("RulesUI:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_8wsfi"]
+resource_name = "form_screen_selected"
+length = 0.46666667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainScreenUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormScreenUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FormScreenUI:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.06666667, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(484, 1019), Vector2(484, 940)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RulesUI:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.06666667),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_4h3t3"]
+resource_name = "main_screen_selected"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainScreenUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MainScreenUI:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-11, 116), Vector2(-18, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("FormScreenUI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RulesUI:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_qg1uo"]
+resource_name = "rules_screen_selected"
+length = 0.43333334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MainScreenUI:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("FormScreenUI:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("RulesUI:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("RulesUI:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.43333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 220), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cme1u"]
+_data = {
+&"RESET": SubResource("Animation_g3rn2"),
+&"form_screen_selected": SubResource("Animation_8wsfi"),
+&"main_screen_selected": SubResource("Animation_4h3t3"),
+&"rules_screen_selected": SubResource("Animation_qg1uo")
+}
+
+[node name="HomeScreen" type="CanvasLayer" unique_id=333967683]
+layer = 2
+script = ExtResource("1_5vlix")
+
+[node name="MainScreenUI" type="Control" parent="." unique_id=425036128]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -18.0
+offset_right = -18.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainScreenUI" unique_id=22161091]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -512.0
+offset_top = -410.0
+offset_right = 1273.0
+offset_bottom = 1077.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5939305, 0.5939305)
+
+[node name="ArcadeReactionTextureRect" type="TextureRect" parent="MainScreenUI/VBoxContainer" unique_id=873221093]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CompressedTexture2D_lay20")
+stretch_mode = 3
+
+[node name="BatakiLogoTextureRect" type="TextureRect" parent="MainScreenUI/VBoxContainer" unique_id=2039538205]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("3_4h3t3")
+stretch_mode = 3
+
+[node name="RectangleTextureRect" type="TextureRect" parent="MainScreenUI/VBoxContainer" unique_id=1569523668]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_mcjlx")
+stretch_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="MainScreenUI/VBoxContainer" unique_id=1514725207]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_unpns")
+
+[node name="CallActionTextureRect" type="TextureRect" parent="MainScreenUI/VBoxContainer" unique_id=171608270]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CompressedTexture2D_ecq0a")
+stretch_mode = 3
+
+[node name="StartGameTextureButton" type="TextureButton" parent="MainScreenUI/VBoxContainer" unique_id=989517880]
+layout_mode = 2
+size_flags_vertical = 3
+texture_normal = ExtResource("4_g3rn2")
+stretch_mode = 3
+
+[node name="TouchStartTextureRect" type="TextureRect" parent="MainScreenUI/VBoxContainer" unique_id=1440018651]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture = ExtResource("5_4h3t3")
+stretch_mode = 3
+
+[node name="FormScreenUI" type="Control" parent="." unique_id=2100398800]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -56.0
+offset_top = -20.0
+offset_right = -16.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("7_g3rn2")
+
+[node name="StepTextureRect" type="TextureRect" parent="FormScreenUI" unique_id=411843966]
+layout_mode = 0
+offset_left = -207.0
+offset_top = -455.0
+offset_right = 793.0
+offset_bottom = -377.0
+scale = Vector2(0.5, 0.5)
+size_flags_vertical = 3
+texture = ExtResource("7_7pb5f")
+expand_mode = 5
+stretch_mode = 3
+
+[node name="MainContainer" type="VBoxContainer" parent="FormScreenUI" unique_id=547853907]
+layout_mode = 0
+offset_left = -436.0
+offset_top = -406.0
+offset_right = 454.0
+offset_bottom = 554.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=762389089]
+layout_mode = 2
+
+[node name="WhoPlaysLabel" type="Label" parent="FormScreenUI/MainContainer/VBoxContainer" unique_id=640538441]
+layout_mode = 2
+theme = ExtResource("2_tto1b")
+theme_override_colors/font_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_colors/font_shadow_color = Color(0.9607843, 0.9607843, 0.9607843, 1)
+theme_override_constants/shadow_offset_x = 0
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/font_size = 92
+text = "Quem vai jogar?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSeparator" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=955514687]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_iehq5")
+
+[node name="FillNameContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=1200179413]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="NameFormContainer" type="HBoxContainer" parent="FormScreenUI/MainContainer/FillNameContainer" unique_id=1698497118]
+layout_mode = 2
+
+[node name="PlayerNameLabel" type="Label" parent="FormScreenUI/MainContainer/FillNameContainer/NameFormContainer" unique_id=2116203477]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+text = "NOME"
+
+[node name="AsterickLabel" type="Label" parent="FormScreenUI/MainContainer/FillNameContainer/NameFormContainer" unique_id=795749592]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+theme_override_colors/font_color = Color(0.42352942, 0.8980392, 0.14509805, 1)
+text = "*"
+
+[node name="UserNameLineEdit" type="LineEdit" parent="FormScreenUI/MainContainer/FillNameContainer" unique_id=1430670127]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_8wsfi")
+
+[node name="HSeparator2" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=1834488465]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_qg1uo")
+
+[node name="FillEmailContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=1526182979]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EmailFormContainer" type="HBoxContainer" parent="FormScreenUI/MainContainer/FillEmailContainer" unique_id=2114574959]
+layout_mode = 2
+
+[node name="EmailLabel" type="Label" parent="FormScreenUI/MainContainer/FillEmailContainer/EmailFormContainer" unique_id=805237841]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+text = "E-MAIL"
+
+[node name="OptionalLabel" type="Label" parent="FormScreenUI/MainContainer/FillEmailContainer/EmailFormContainer" unique_id=1291118147]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+theme_override_colors/font_color = Color(0.7529412, 0.7607843, 0.78431374, 1)
+theme_override_constants/line_spacing = 3
+text = "(OPCIONAL)"
+
+[node name="UserEmailLineEdit" type="LineEdit" parent="FormScreenUI/MainContainer/FillEmailContainer" unique_id=1920628876]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_8wsfi")
+
+[node name="HSeparator3" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=1757243415]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_g3rn2")
+
+[node name="FillEnterpriseContainer" type="VBoxContainer" parent="FormScreenUI/MainContainer" unique_id=1374528763]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="EnterpriseFormContainer" type="HBoxContainer" parent="FormScreenUI/MainContainer/FillEnterpriseContainer" unique_id=862801723]
+layout_mode = 2
+
+[node name="EnterpriseLabel" type="Label" parent="FormScreenUI/MainContainer/FillEnterpriseContainer/EnterpriseFormContainer" unique_id=226651127]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+text = "EMPRESA"
+
+[node name="OptionalLabel" type="Label" parent="FormScreenUI/MainContainer/FillEnterpriseContainer/EnterpriseFormContainer" unique_id=2113724310]
+layout_mode = 2
+theme = ExtResource("7_3q4aq")
+theme_override_colors/font_color = Color(0.7529412, 0.7607843, 0.78431374, 1)
+theme_override_constants/line_spacing = 3
+text = "(OPCIONAL)"
+
+[node name="UserEnterpriseLineEdit" type="LineEdit" parent="FormScreenUI/MainContainer/FillEnterpriseContainer" unique_id=1378335936]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("8_8wsfi")
+
+[node name="HSeparator4" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=909800345]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_4h3t3")
+
+[node name="ContinueTextureButton" type="TextureButton" parent="FormScreenUI/MainContainer" unique_id=1980007848]
+layout_mode = 2
+texture_normal = ExtResource("11_g3rn2")
+texture_disabled = ExtResource("12_4h3t3")
+stretch_mode = 3
+
+[node name="HSeparator5" type="HSeparator" parent="FormScreenUI/MainContainer" unique_id=694493125]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_mcjlx")
+
+[node name="BackHomeButton" type="TextureButton" parent="FormScreenUI/MainContainer" unique_id=481656779]
+layout_mode = 2
+texture_normal = SubResource("CompressedTexture2D_qo4ak")
+stretch_mode = 3
+
+[node name="RulesUI" type="Control" parent="." unique_id=972092332]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="RulesContainer" type="VBoxContainer" parent="RulesUI" unique_id=252480106]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 552.0
+offset_right = 1891.0
+offset_bottom = 2308.0
+scale = Vector2(0.46466368, 0.46466368)
+
+[node name="TextureRect" type="TextureRect" parent="RulesUI/RulesContainer" unique_id=1019582432]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_iehq5")
+stretch_mode = 3
+
+[node name="HSeparator4" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=891074979]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_7u7q5")
+
+[node name="RulesTitleTextureRect" type="TextureRect" parent="RulesUI/RulesContainer" unique_id=117505996]
+layout_mode = 2
+size_flags_vertical = 3
+texture = SubResource("CompressedTexture2D_qg1uo")
+stretch_mode = 3
+
+[node name="HSeparator" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1932306738]
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_nxtf7")
+
+[node name="Rule1TextureRect" type="TextureRect" parent="RulesUI/RulesContainer" unique_id=1193090296]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_g3rn2")
+
+[node name="HSeparator2" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=2118845226]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_lay20")
+
+[node name="Rule2TextureRect" type="TextureRect" parent="RulesUI/RulesContainer" unique_id=1695278172]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_4h3t3")
+
+[node name="HSeparator3" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=859034296]
+custom_minimum_size = Vector2(0, 20)
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
+
+[node name="Rule3TextureRect" type="TextureRect" parent="RulesUI/RulesContainer" unique_id=1253810941]
+layout_mode = 2
+texture = SubResource("CompressedTexture2D_mcjlx")
+
+[node name="HSeparator5" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=76171157]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
+
+[node name="ContinueTextureButton" type="TextureButton" parent="RulesUI/RulesContainer" unique_id=214941823]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.0
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture_normal = ExtResource("13_g3rn2")
+stretch_mode = 3
+
+[node name="HSeparator6" type="HSeparator" parent="RulesUI/RulesContainer" unique_id=1393853918]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_styles/separator = SubResource("StyleBoxLine_8hfop")
+
+[node name="BackHomeButton" type="TextureButton" parent="RulesUI/RulesContainer" unique_id=785110989]
+layout_mode = 2
+size_flags_vertical = 3
+offset_transform_enabled = true
+offset_transform_scale = Vector2(2, 2)
+texture_normal = SubResource("CompressedTexture2D_qo4ak")
+stretch_mode = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=41413511]
+libraries/ = SubResource("AnimationLibrary_cme1u")
+autoplay = &"main_screen_selected"
+
+[node name="FormsManager" type="Node" parent="." unique_id=306531227]
+script = ExtResource("13_qg1uo")
+
+[connection signal="pressed" from="MainScreenUI/VBoxContainer/StartGameTextureButton" to="." method="_on_start_game_button_pressed"]
+[connection signal="text_changed" from="FormScreenUI/MainContainer/FillNameContainer/UserNameLineEdit" to="." method="_on_user_name_line_edit_text_changed"]
+[connection signal="text_changed" from="FormScreenUI/MainContainer/FillEmailContainer/UserEmailLineEdit" to="." method="_on_user_email_line_edit_text_changed"]
+[connection signal="text_changed" from="FormScreenUI/MainContainer/FillEnterpriseContainer/UserEnterpriseLineEdit" to="." method="_on_user_enterprise_line_edit_text_changed"]
+[connection signal="pressed" from="FormScreenUI/MainContainer/ContinueTextureButton" to="." method="_on_play_game_button_pressed"]
+[connection signal="pressed" from="FormScreenUI/MainContainer/BackHomeButton" to="." method="_on_back_home_button_pressed"]
+[connection signal="pressed" from="RulesUI/RulesContainer/ContinueTextureButton" to="." method="_on_rules_start_game_button_pressed"]
+[connection signal="pressed" from="RulesUI/RulesContainer/BackHomeButton" to="." method="_on_back_home_button_pressed"]

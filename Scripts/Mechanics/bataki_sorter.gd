@@ -1,37 +1,30 @@
 class_name BatakiSorter
 extends Node
 
-@export var bataki_buttons : Array[TextureButton]
+## Sorteia qual bataki acende. Fala em índices — não conhece botão, textura nem cena.
 
-@export var score_counter_manager : ScoreCounterManager
-@onready var button_effect_manager: ButtonEffectManager = $"../ButtonEffectManager"
+## Quantos batakis existem no grid (3x3).
+@export var bataki_count: int = 9
 
+signal bataki_sorted(index: int)
 
-var actual_sort_bataki : TextureButton = null
-
-
-func _ready() -> void:
-	assign_signal_activation()
-
-func assign_signal_activation():
-	for bataki in bataki_buttons:
-		bataki.pressed.connect(score_counter_manager.check_correct_button.bind(bataki))
+## Índice do bataki aceso agora. -1 = nenhum.
+var active_index: int = -1
 
 
-func sort_new_bataki():
-	print("Sorteando novo Bataki")
-	var valid_buttons = bataki_buttons.filter(
-		func(button): return button != actual_sort_bataki)
-	if valid_buttons.is_empty(): 
-		valid_buttons = bataki_buttons
-	var chosen_bataki = valid_buttons.pick_random()
-	actual_sort_bataki = chosen_bataki
-	button_effect_manager.turn_on_bataki(actual_sort_bataki)
-	
-func get_button_status(button : TextureButton):
-	if button != actual_sort_bataki:
-		return true
-	else:
-		return false
-	
-	
+func sort_new_bataki() -> void:
+	var candidates: Array[int] = []
+	for i in bataki_count:
+		if i != active_index:      # nunca sorteia o mesmo duas vezes seguidas
+			candidates.append(i)
+
+	active_index = candidates.pick_random()
+	bataki_sorted.emit(active_index)
+
+
+func is_active(index: int) -> bool:
+	return index == active_index
+
+
+func reset() -> void:
+	active_index = -1

@@ -13,20 +13,23 @@ config_version=5
 config/name="BATAKI"
 run/main_scene="uid://casdixt0j0y21"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://hjgo1w28lunl"
 
 [autoload]
 
 GameManager="*uid://b57xgeb4gswy"
 AudioManager="*uid://cikiq0qfjf10u"
 InactivityManager="*uid://bg7einv7qvieo"
+ScreenFlow="*res://Scripts/Globals_Singletons/ScreenFlow.gd"
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=1080
+window/size/viewport_height=1920
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+window/size/mode.editor=0
 
 [dotnet]
 
